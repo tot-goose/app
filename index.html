@@ -1,40 +1,310 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>🦆 Тот ещё Гусь — Бронь</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тот ещё Гусь — Бронь</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #252525;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        
+        /* --- Стили для логотипа --- */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 120px; /* Размер логотипа */
+            height: auto;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #ff4757;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .location {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #ddd;
+            font-size: 14px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #ff4757;
+        }
+        .guests-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .guest-btn {
+            background: #333;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 14px;
+        }
+        .guest-btn.active {
+            background: #ff4757;
+            border-color: #ff4757;
+            font-weight: bold;
+        }
+        .guest-btn:hover:not(.active) {
+            background: #444;
+        }
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .checkbox-wrapper input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #ff4757;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #ff6b81;
+        }
+        .error-msg {
+            color: #ff4757;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .success-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 100;
+        }
+        .success-overlay.show {
+            display: flex;
+        }
+        .success-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        .success-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .success-text {
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .success-btn {
+            background: #ff4757;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🦆 Тот ещё Гусь</h1>
-      <p>Гастрокафе • Москва, Валовая 26</p>
-    </header>
-    <form id="bookingForm">
-      <div class="form-group"><label>Имя *</label><input type="text" id="name" required placeholder="Иван"></div>
-      <div class="form-group"><label>Телефон *</label><input type="tel" id="phone" required placeholder="+7 (999) 000-00-00"></div>
-      <div class="row">
-        <div class="form-group"><label>Дата *</label><input type="date" id="date" required></div>
-        <div class="form-group"><label>Время *</label><input type="time" id="time" required min="12:00" max="23:30"></div>
-      </div>
-      <div class="form-group"><label>Гости *</label>
-        <select id="guests" required><option value="">Выберите</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6+">6+</option></select>
-      </div>
-      <div class="form-group parking-section">
-        <label><input type="checkbox" id="needsParking"> 🅿️ Нужна парковка</label>
-      </div>
-      <div id="carDetails" class="car-details" style="display:none;">
-        <div class="row">
-          <div class="form-group"><label>Марка *</label><input type="text" id="carBrand" placeholder="BMW, Toyota..."></div>
-          <div class="form-group"><label>Госномер *</label><input type="text" id="carPlate" placeholder="А123БВ777" maxlength="10"></div>
+    <div class="container">
+        <!-- Шапка с Логотипом -->
+        <div class="header">
+            <!-- Картинка logo.png должна лежать рядом с index.html -->
+            <img src="logo.png" alt="Логотип Тот ещё Гусь" class="logo">
+            <h1>Тот ещё Гусь</h1>
+            <p class="location">Гастрокафе • Москва, Валовая 26</p>
         </div>
-      </div>
-      <button type="submit" class="btn-primary">✅ Забронировать стол</button>
-    </form>
-  </div>
-  <script src="script.js"></script>
+
+        <form id="bookingForm">
+            <label for="name">Имя *</label>
+            <input type="text" id="name" required placeholder="Как вас зовут?">
+
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" required placeholder="+7 (999) 000-00-00">
+
+            <label for="date">Дата *</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Время *</label>
+            <select id="time" required>
+                <option value="">Выберите время</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+            </select>
+
+            <label>Гости *</label>
+            <div class="guests-grid" id="guestsGrid">
+                <button type="button" class="guest-btn" data-val="1">1</button>
+                <button type="button" class="guest-btn" data-val="2">2</button>
+                <button type="button" class="guest-btn" data-val="3">3</button>
+                <button type="button" class="guest-btn" data-val="4">4</button>
+                <button type="button" class="guest-btn" data-val="5">5</button>
+                <button type="button" class="guest-btn" data-val="6">6+</button>
+            </div>
+            <input type="hidden" id="guests" required>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="needsParking">
+                <label for="needsParking" style="margin:0; cursor:pointer;">️ Нужна парковка</label>
+            </div>
+
+            <div id="carDetails" style="display:none;">
+                <label for="carBrand">Марка авто</label>
+                <input type="text" id="carBrand" placeholder="Например: BMW">
+                
+                <label for="carPlate">Госномер</label>
+                <input type="text" id="carPlate" placeholder="А 000 АА 00" style="text-transform: uppercase;">
+            </div>
+
+            <button type="submit" class="submit-btn">✅ Забронировать стол</button>
+        </form>
+    </div>
+
+    <!-- Окно успеха -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-icon"></div>
+        <div class="success-title">Забронировано!</div>
+        <div class="success-text">Ждём вас в «Тот ещё Гусь».<br>Подтверждение придёт в чат.</div>
+        <a href="#" class="success-btn" onclick="Telegram.WebApp.close()">Закрыть</a>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+
+        // Установка минимальной даты (сегодня)
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Управление выбором гостей
+        const guestBtns = document.querySelectorAll('.guest-btn');
+        const guestsInput = document.getElementById('guests');
+        guestBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                guestBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                guestsInput.value = btn.dataset.val;
+            });
+        });
+
+        // Управление парковкой
+        const parkingCheck = document.getElementById('needsParking');
+        const carDetails = document.getElementById('carDetails');
+        parkingCheck.addEventListener('change', () => {
+            carDetails.style.display = parkingCheck.checked ? 'block' : 'none';
+        });
+
+        // Отправка данных
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if(!guestsInput.value) {
+                alert('Пожалуйста, выберите количество гостей');
+                return;
+            }
+
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                date: dateInput.value,
+                time: document.getElementById('time').value,
+                guests: parseInt(guestsInput.value),
+                needs_parking: parkingCheck.checked,
+                car_brand: parkingCheck.checked ? document.getElementById('carBrand').value : null,
+                car_plate: parkingCheck.checked ? document.getElementById('carPlate').value.toUpperCase() : null
+            };
+
+            // Отправляем данные боту
+            tg.sendData(JSON.stringify(data));
+            
+            // Показываем экран успеха (на случай если Telegram не закроется сразу)
+            document.getElementById('successOverlay').classList.add('show');
+        });
+
+        // Настройка темы под Telegram
+        if(tg.themeParams) {
+            document.body.style.backgroundColor = tg.themeParams.bg_color || '#1a1a1a';
+        }
+    </script>
 </body>
 </html>
