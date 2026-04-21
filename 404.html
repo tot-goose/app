@@ -1,0 +1,3967 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВИННАЯ КАРТА | ТОТ ЕЩЁ ГУСЬ | ГАСТРОКАФЕ</title>
+    <link rel="icon" href="https://img.totgoose.ru/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #faf8f5 0%, #f0ebe3 100%);
+        }
+/* Age Verification Modal - Light Theme */
+.age-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.age-modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.age-modal {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 50px 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(139, 0, 0, 0.05);
+    position: relative;
+    animation: modalSlideIn 0.5s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.age-modal::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), transparent, rgba(139, 0, 0, 0.1));
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.age-modal-logo {
+    width: 177px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.age-modal-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 28px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.age-modal-subtitle {
+    font-size: 18px;
+    color: #8b0000;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.age-modal-text {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+
+.age-modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.age-btn {
+    padding: 15px 35px;
+    border: 2px solid #8b0000;
+    background: transparent;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    min-width: 140px;
+}
+
+.age-btn:hover {
+    background: #8b0000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
+}
+
+.age-btn.confirm {
+    background: #8b0000;
+    color: #fff;
+}
+
+.age-btn.confirm:hover {
+    background: #d9534f;
+    border-color: #d9534f;
+}
+
+.age-btn.deny {
+    border-color: #ccc;
+    color: #666;
+}
+
+.age-btn.deny:hover {
+    background: #f5f5f5;
+    border-color: #999;
+    color: #333;
+}
+
+.age-modal-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.3), transparent);
+    margin: 30px 0;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.age-warning {
+    font-size: 12px;
+    color: #999;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile Age Modal */
+@media (max-width: 768px) {
+    .age-modal {
+        padding: 35px 25px;
+    }
+
+    .age-modal-title {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .age-modal-subtitle {
+        font-size: 16px;
+    }
+
+    .age-modal-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .age-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .age-modal-title {
+        font-size: 20px;
+    }
+}
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: linear-gradient(145deg, #faf8f5 0%, #f0ebe3 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo-image {
+            width: 177px;
+            height: 230px;
+            margin-right: 10px;
+        }
+
+        .header-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-nav a {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 30px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #d9534f;
+        }
+
+        .header-contacts {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .phone-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .phone-link i {
+            color: #d9534f;
+        }
+
+        .address-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .address-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #d9534f;
+        }
+
+        @media (max-width: 960px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .header-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .wl-container {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: linear-gradient(145deg, #faf8f5 0%, #f0ebe3 100%);
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+ .hr-shelf {
+            margin: -30px auto 40px;
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #8b0000;
+            box-shadow: 0 20px 20px -20px #8b0000;
+            width: 70%;    
+            margin-bottom: 40px;
+        }
+          .hr-shelf-1 {
+            margin: left;
+            margin-top: -50px;
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #8b0000;
+            box-shadow: 0 20px 20px -20px #8b0000;
+            width: 60%;    
+        }
+        
+        .wl-main-title {
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            color: #000;
+            
+            padding-bottom: 20px;
+        }
+
+        .wl-section-title {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #8b0000;
+            text-align: center;
+            font-weight: 700;
+           
+        }
+
+        .wl-section-footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #8b0000;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .wl-subsection-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+            border-left: 4px solid #8b0000;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+   .wl-hr-line {
+            
+            margin: 1px 0;
+            height: 1px;
+            border: none;
+            border-bottom: 1px solid #8b0000;
+            box-shadow: 0 2px 4px -2px #8b0000;
+            width: 60%;
+            margin-left: 0;
+        }
+        .wl-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px 20px;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .wl-grid:last-child {
+            border-bottom: none;
+        }
+
+       .wl-info {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .wl-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .wl-details {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .wl-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #8b0000;
+            white-space: nowrap;
+            text-align: right;
+            min-width: 80px;
+        }
+
+        @media (max-width: 600px) {
+            .wl-container {
+                padding: 15px;
+            }
+            
+            .wl-main-title { 
+                font-size: 24px; 
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .wl-main-title .separator {
+                display: none;
+            }
+            
+            .wl-section-title { 
+                font-size: 18px; 
+                margin-top: 30px;
+                margin-bottom: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .wl-section-title .separator {
+                display: none;
+            }
+            
+            .wl-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .wl-price {
+                text-align: left;
+                margin-top: 5px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .wl-main-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Age Verification Modal -->
+<div id="ageModal" class="age-modal-overlay">
+    <div class="age-modal">
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" class="age-modal-logo">
+        <h2 class="age-modal-title">Вам уже есть 18?</h2>
+        <p class="age-modal-subtitle">Подтвердите возраст</p>
+        
+        <div class="age-modal-divider"></div>
+        
+        <p class="age-modal-text">
+            Содержимое данного сайта предназначено только для лиц достигших совершеннолетнего возраста
+        </p>
+        
+        <div class="age-modal-buttons">
+            <button class="age-btn confirm" onclick="confirmAge()">Да, мне 18+</button>
+            <button class="age-btn deny" onclick="denyAge()">Нет, мне нет 18</button>
+        </div>
+        
+        <p class="age-warning">Продажа алкоголя несовершеннолетним запрещена</p>
+    </div>
+</div>
+    <header class="header">
+        <a href="https://totgoose.ru" class="header-logo">
+            <img src="https://img.totgoose.ru/goose.png" alt="Гусь" class="logo-image">
+        </a>
+
+        <nav class="header-nav">
+            <ul>
+                <li><a href="menu.html" >МЕНЮ  </a></li>
+                <li><a href="menu_dinner.html" >ОБЕД  </a></li>
+                <li><a href="index.html" >ВИННАЯ КАРТА</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-contacts">
+            <a href="tel:+79999262688" class="phone-link">
+                <i class="fas fa-phone-alt"></i>
+                +7 (9999) 26-26-88
+            </a>
+            
+            <a href="https://yandex.ru/maps/org/tot_yeshchyo_gus/240625638253/" target="_blank" class="address-link">
+                <i class="fas fa-map-marker-alt" style='font-size:24px ; color:red'></i>
+                Мск , Валовая , 26
+            </a>
+
+            <div class="social-icons">
+                <a href="https://vk.com/totgooserestocafe" target="_blank" title="VK">
+                    <i class='fab fa-vk' style='font-size:30px;color:red'></i>
+                </a>
+                <a href="https://t.me/totgooserestocafe" target="_blank" title="Telegram">
+                    <i class='fab fa-telegram-plane' style='font-size:30px;color:red'></i>
+                </a>
+                <a href="https://www.totgoose.ru/blog" target="_blank" title="Blog">
+                   <i class='fas fa-blog' style='font-size:30px;color:red'></i>
+                </a>
+                <a href="https://www.totgoose.ru" target="_blank" title="totgoose.ru">
+                   <i class="fa fa-internet-explorer" style="font-size:30px;color:red"></i>
+                </a>
+                <a href="mailto:totgoose@ya.ru" target="_blank" title="totgoose@ya.ru">
+                  <i class="fa fa-envelope" style="font-size:30px;color:red"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wl-container">  
+        
+        <h1 class="wl-main-title">ВИННАЯ КАРТА ТОТ ЕЩЁ ГУСЬ</h1>
+        <hr class="hr-shelf">
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+
+        <div class="wl-section-title">WINE BY THE GLASS <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">WHITE 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/campelo-vinho-verde-portugal-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Campelo Vinho Verde Portugal 2024 (glass)</span>
+                <span class="wl-details">CAMPELO,Minho, Portugal</span>
+            </a>
+            <div class="wl-price">580 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pavonero-bianco-toscana-italy-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Pavonero Bianco Toscana Italy 2024 (glass)</span>
+                <span class="wl-details">PAVONERO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">590 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/muscadet-sevre-et-maine-aoc-sur-lie-loire-france-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Muscadet Sevre et Maine AOC Sur Lie Loire France 2023 (glass)</span>
+                <span class="wl-details">LOIRE TRADITION,Loire, France</span>
+            </a>
+            <div class="wl-price">650 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-le-raz-cuvee-grand-chene-south-west-france-2016-glass.html"  class="wl-info">
+                <span class="wl-name">Chateau Le Raz Cuvee Grand Chene South-West France 2016 (glass)</span>
+                <span class="wl-details">CHÂTEAU LE RAZ,South-West France</span>
+            </a>
+            <div class="wl-price">690 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-nube-california-usa-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Nube California USA 2023 (glass)</span>
+                <span class="wl-details">NUBE,California, USA</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/villa-neus-blanc-j.neus-rheinhessen-germany-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Villa Neus Blanc J.Neus Rheinhessen Germany 2023 (glass)</span>
+                <span class="wl-details">J. NEUS,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sauvignon-blanc-the-kauri-tree-hawkes-bay-new-zealand-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Sauvignon Blanc The Kauri Tree Hawkes Bay New Zealand 2022 (glass)</span>
+                <span class="wl-details">THE KAURI TREE,Hawke&#x27;s Bay, New Zealand</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gruner-veltliner-terrassen-markus-huber-traisental-austria-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Gruner Veltliner Terrassen Markus Huber Traisental Austria 2024 (glass)</span>
+                <span class="wl-details">MARKUS HUBER,Traisental, Austria</span>
+            </a>
+            <div class="wl-price">760 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-louis-guntrum-dry-riesling-rheinhessen-germany-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Riesling Louis Guntrum Dry Riesling Rheinhessen Germany 2023 (glass)</span>
+                <span class="wl-details">LOUIS GUNTRUM,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">790 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chenin-blanc-seriously-cool-waterkloof-stellenbosch-south-africa-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Chenin Blanc Seriously Cool Waterkloof Stellenbosch South Africa 2023 (glass)</span>
+                <span class="wl-details">WATERKLOOF,Stellenbosch, South Africa</span>
+            </a>
+            <div class="wl-price">840 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kalk-chardonnay-nals-margreid-alto-adige-italy-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Kalk Chardonnay Nals Margreid Alto Adige Italy 2023 (glass)</span>
+                <span class="wl-details">NALS MARGREID,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">960 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chenin-blanc-perdeberg-wines-south-africa-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Chenin Blanc Perdeberg Wines South Africa 2023 (glass)</span>
+                <span class="wl-details">PERDEBERG,Coastal Region, South Africa</span>
+            </a>
+            <div class="wl-price">640 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gewurztraminer-river-route-pfalz-germany-semi-sweet-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Gewurztraminer River Route Pfalz Germany (Semi Sweet) 2024 (glass)</span>
+                <span class="wl-details">RIVER ROUTE,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">660 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/villa-neus-blanc-j.neus-rheinhessen-germany-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Villa Neus Blanc J.Neus Rheinhessen Germany 2024 (glass)</span>
+                <span class="wl-details">J. NEUS,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-balthasar-ress-von-unserm-rheingau-germany-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Riesling Balthasar Ress Von Unserm Rheingau Germany 2024 (glass)</span>
+                <span class="wl-details">BALTHASAR RESS,Rheingau, Germany</span>
+            </a>
+            <div class="wl-price">790 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">SPARKLING 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cava-brut-vibracions-cavas-masachs-catalonia-spain-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Cava Brut Vibracions Cavas Masachs Catalonia Spain 2023 (glass)</span>
+                <span class="wl-details">CAVAS MASACHS,Catalonia, Spain</span>
+            </a>
+            <div class="wl-price">600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/prosecco-superiore-docg-brut-valdobbiadene-veneto-italy-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Prosecco Superiore DOCG Brut Valdobbiadene Veneto Italy 2024 (glass)</span>
+                <span class="wl-details">VALDOBBIADENE,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-de-limoux-cuvee-tradition-brut-languedoc-roussillon-france-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Cremant de Limoux Cuvee Tradition Brut Languedoc-Roussillon France 2023 (glass)</span>
+                <span class="wl-details">LIMOUX TRADITION,Languedoc-Roussillon, France</span>
+            </a>
+            <div class="wl-price">920 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kaapse-vonkel-brut-rose-simonsig-western-cape-south-africa-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Kaapse Vonkel Brut Rose Simonsig Western Cape South Africa 2022 (glass)</span>
+                <span class="wl-details">SIMONSIG,Western Cape, South Africa</span>
+            </a>
+            <div class="wl-price">990 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">ROSE 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/campelo-vinho-verde-rose-portugal-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Campelo Vinho Verde Rose Portugal 2023 (glass)</span>
+                <span class="wl-details">CAMPELO,Minho, Portugal</span>
+            </a>
+            <div class="wl-price">590 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/domaine-laffitte-cotes-de-gascogne-france-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Domaine Laffitte Cotes de Gascogne France 2023 (glass)</span>
+                <span class="wl-details">DOMAINE LAFFITTE,Gascogne, France</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">RED 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/termo-de-lisboa-casa-santos-lima-portugal-2020-glass.html"  class="wl-info">
+                <span class="wl-name">Termo De Lisboa Casa Santos Lima Portugal 2020 (glass)</span>
+                <span class="wl-details">CASA SANTOS LIMA,Lisboa, Portugal</span>
+            </a>
+            <div class="wl-price">520 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/varas-tinto-lisboa-portugal-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Varas Tinto Lisboa Portugal 2021 (glass)</span>
+                <span class="wl-details">VARAS,Lisboa, Portugal</span>
+            </a>
+            <div class="wl-price">520 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/altos-de-la-hoya-olivares-jumilla-spain-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Altos de la Hoya Olivares Jumilla Spain 2022 (glass)</span>
+                <span class="wl-details">OLIVARES,Jumilla, Spain</span>
+            </a>
+            <div class="wl-price">520 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chianti-monteguelfo-toscana-italy-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Chianti Monteguelfo Toscana Italy 2023 (glass)</span>
+                <span class="wl-details">MONTEGUELFO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">590 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-nero-trevenezie-veneto-italy-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Pinot Nero Trevenezie Veneto Italy 2024 (glass)</span>
+                <span class="wl-details">VENETO SELECTION,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-pomal-crianza-rioja-spain-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Vina Pomal Crianza Rioja Spain 2021 (glass)</span>
+                <span class="wl-details">VIÑA POMAL,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">770 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zweigelt-domaene-gobelsburg-niederosterreich-austria-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Zweigelt Domaene Gobelsburg Niederosterreich Austria 2021 (glass)</span>
+                <span class="wl-details">DOMÄNE GOBELSBURG,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">820 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/malbec-luigi-bosca-mendoza-argentina-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Malbec Luigi Bosca Mendoza Argentina 2024 (glass)</span>
+                <span class="wl-details">LUIGI BOSCA,Mendoza, Argentina</span>
+            </a>
+            <div class="wl-price">870 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cotes-du-rhone-chateau-de-marjolet-rhone-france-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Cotes du Rhone Chateau de Marjolet Rhone France 2024 (glass)</span>
+                <span class="wl-details">CHÂTEAU DE MARJOLET,Rhône, France</span>
+            </a>
+            <div class="wl-price">910 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zinfandel-reserve-lodi-california-usa-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Zinfandel Reserve Lodi California USA 2021 (glass)</span>
+                <span class="wl-details">LODI RESERVE,California, USA</span>
+            </a>
+            <div class="wl-price">960 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chianti-monteguelfo-toscana-italy-2024-glass.html"  class="wl-info">
+                <span class="wl-name">Chianti Monteguelfo Toscana Italy 2024 (glass)</span>
+                <span class="wl-details">MONTEGUELFO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">590 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CORAVIN WHITE 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-eierfels-diel-nahe-germany-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Riesling Eierfels Diel Nahe Germany 2022 (glass)</span>
+                <span class="wl-details">DIEL,Nahe, Germany</span>
+            </a>
+            <div class="wl-price">1770 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/lochle-gg-weissburgunder-weingut-burg-ravensburg-baden-germany-2018-glass.html"  class="wl-info">
+                <span class="wl-name">Lochle GG Weissburgunder Weingut Burg Ravensburg Baden Germany 2018 (glass)</span>
+                <span class="wl-details">BURG RAVENSBURG,Baden, Germany</span>
+            </a>
+            <div class="wl-price">1950 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-domaine-agnes-paquet-bourgogne-france-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Domaine Agnes Paquet Bourgogne France 2022 (glass)</span>
+                <span class="wl-details">DOMAINE AGNÈS PAQUET,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">2400 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CORAVIN RED 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cote-de-nuits-villages-bourgogne-france-2020-glass.html"  class="wl-info">
+                <span class="wl-name">Cote de Nuits-Villages Bourgogne France 2020 (glass)</span>
+                <span class="wl-details">BURGUNDY SELECTION,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">1990 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-citran-haut-medoc-france-2014-glass.html"  class="wl-info">
+                <span class="wl-name">Chateau Citran Haut-Medoc France 2014 (glass)</span>
+                <span class="wl-details">CHÂTEAU CITRAN,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">1680 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kasnostop-na-terracah-sikory-kuban-semigorye-2019-glass.html"  class="wl-info">
+                <span class="wl-name">Kasnostop Na Terracah Sikory Kuban Semigorye 2019 (glass)</span>
+                <span class="wl-details">СЕМИБЕРЕЖЬЕ,Kuban, Russia</span>
+            </a>
+            <div class="wl-price">2180 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateauneuf-du-pape-gabriel-meffre-laurus-rhone-france-2016-glass.html"  class="wl-info">
+                <span class="wl-name">Chateauneuf-du-Pape Gabriel Meffre Laurus Rhone France 2016 (glass)</span>
+                <span class="wl-details">GABRIEL MEFFRE,Rhône, France</span>
+            </a>
+            <div class="wl-price">2580 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CORAVIN CLARET 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/picaro-del-aguila-rose-vinas-viejas-dominio-del-aguila-ribera-del-duero-spain-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Picaro del Aguila Rose Vinas Viejas Dominio del Aguila Ribera del Duero Spain 2023 (glass)</span>
+                <span class="wl-details">DOMINIO DEL ÁGUILA,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">2380 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CHAMPAGNE 150ml</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/delot-blanc-de-noirs-reserve-brut-2023-glass.html"  class="wl-info">
+                <span class="wl-name">Delot Blanc de Noirs Reserve Brut 2023 (glass)</span>
+                <span class="wl-details">DELOT,Champagne, France</span>
+            </a>
+            <div class="wl-price">9300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/loriot-pagel-carte-dor-brut-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Loriot-Pagel Carte d&#x27;Or Brut NV (glass)</span>
+                <span class="wl-details">LORIOT-PAGEL,Champagne, France</span>
+            </a>
+            <div class="wl-price">9400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bernard-remy-grand-cru-brut-2015-glass.html"  class="wl-info">
+                <span class="wl-name">Bernard Remy Grand Cru Brut 2015 (glass)</span>
+                <span class="wl-details">BERNARD REMY,Champagne, France</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/delot-rose-brut-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Delot Rose Brut 2021 (glass)</span>
+                <span class="wl-details">DELOT,Champagne, France</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/henri-dosnon-brut-selection-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Henri Dosnon Brut Selection 2021 (glass)</span>
+                <span class="wl-details">HENRI DOSNON,Champagne, France</span>
+            </a>
+            <div class="wl-price">10500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/forget-brimont-brut-1-cru-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Forget-Brimont Brut 1-Cru NV (glass)</span>
+                <span class="wl-details">FORGET-BRIMONT,Champagne, France</span>
+            </a>
+            <div class="wl-price">10500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/delot-montre-cul-blanc-de-blancs-brut-2021-glass.html"  class="wl-info">
+                <span class="wl-name">Delot Montre-Cul Blanc De Blancs Brut 2021 (glass)</span>
+                <span class="wl-details">DELOT,Champagne, France</span>
+            </a>
+            <div class="wl-price">10700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/loriot-pagel-brut-nature-2017-glass.html"  class="wl-info">
+                <span class="wl-name">Loriot-Pagel Brut Nature 2017 (glass)</span>
+                <span class="wl-details">LORIOT-PAGEL,Champagne, France</span>
+            </a>
+            <div class="wl-price">11400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/meteyer-cuvee-marine-brut-2020-glass.html"  class="wl-info">
+                <span class="wl-name">Meteyer Cuvee Marine Brut 2020 (glass)</span>
+                <span class="wl-details">METEYER,Champagne, France</span>
+            </a>
+            <div class="wl-price">11500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/delot-cuvee-legende-brut-2022-glass.html"  class="wl-info">
+                <span class="wl-name">Delot Cuvee Legende Brut 2022 (glass)</span>
+                <span class="wl-details">DELOT,Champagne, France</span>
+            </a>
+            <div class="wl-price">12300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/loriot-pagel-blanc-de-blancs-brut-grand-cru-2020-glass.html"  class="wl-info">
+                <span class="wl-name">Loriot-Pagel Blanc De Blancs Brut Grand Cru 2020 (glass)</span>
+                <span class="wl-details">LORIOT-PAGEL,Champagne, France</span>
+            </a>
+            <div class="wl-price">13300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/henri-dosnon-original-brut-nature-2015-glass.html"  class="wl-info">
+                <span class="wl-name">Henri Dosnon Original Brut Nature 2015 (glass)</span>
+                <span class="wl-details">HENRI DOSNON,Champagne, France</span>
+            </a>
+            <div class="wl-price">12900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/francis-boulard-et-fille-les-murgiers-brut-nature-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Francis Boulard et Fille Les Murgiers Brut Nature NV (glass)</span>
+                <span class="wl-details">FRANCIS BOULARD,Champagne, France</span>
+            </a>
+            <div class="wl-price">13200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/drappier-brut-nature-zero-dosage-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Drappier Brut Nature Zero Dosage NV (glass)</span>
+                <span class="wl-details">DRAPPIER,Champagne, France</span>
+            </a>
+            <div class="wl-price">15600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/laherte-freres-rose-de-meunier-extra-brut-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Laherte Freres Rose de Meunier Extra Brut NV (glass)</span>
+                <span class="wl-details">LAHERTE FRÈRES,Champagne, France</span>
+            </a>
+            <div class="wl-price">16400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/joseph-loriot-pagel-cuvee-6-brut-2014-glass.html"  class="wl-info">
+                <span class="wl-name">Joseph Loriot-Pagel Cuvee 6 Brut 2014 (glass)</span>
+                <span class="wl-details">LORIOT-PAGEL,Champagne, France</span>
+            </a>
+            <div class="wl-price">17200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bruno-paillard-premiere-cuvee-extra-brut-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Bruno Paillard Premiere Cuvee Extra Brut NV (glass)</span>
+                <span class="wl-details">BRUNO PAILLARD,Champagne, France</span>
+            </a>
+            <div class="wl-price">18600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/a.-bergere-solera-blanc-de-blanc-2021-glass.html"  class="wl-info">
+                <span class="wl-name">A. Bergere Solera Blanc de Blanc 2021 (glass)</span>
+                <span class="wl-details">A. BERGÈRE,Champagne, France</span>
+            </a>
+            <div class="wl-price">19800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bruno-paillard-rose-premiere-cuvee-extra-brut-nv-glass.html"  class="wl-info">
+                <span class="wl-name">Bruno Paillard Rose Premiere Cuvee Extra Brut NV (glass)</span>
+                <span class="wl-details">BRUNO PAILLARD,Champagne, France</span>
+            </a>
+            <div class="wl-price">23300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ployez-jacquemart-extra-brut-vintage-blanc-de-blanc-2010-glass.html"  class="wl-info">
+                <span class="wl-name">Ployez-Jacquemart Extra Brut Vintage Blanc de Blanc 2010 (glass)</span>
+                <span class="wl-details">PLOYEZ-JACQUEMART,Champagne, France</span>
+            </a>
+            <div class="wl-price">25900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bruno-paillard-blanc-de-blancs-extra-brut-2014-glass.html"  class="wl-info">
+                <span class="wl-name">Bruno Paillard Blanc De Blancs Extra Brut 2014 (glass)</span>
+                <span class="wl-details">BRUNO PAILLARD,Champagne, France</span>
+            </a>
+            <div class="wl-price">29100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/henri-dosnon-millesime-brut-2009-glass.html"  class="wl-info">
+                <span class="wl-name">Henri Dosnon Millesime Brut 2009 (glass)</span>
+                <span class="wl-details">HENRI DOSNON,Champagne, France</span>
+            </a>
+            <div class="wl-price">42200 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">TEMPRANILLO, TOURIGA &amp; BLENDS <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">THREE RIVERS: EBRO, DUERO &amp; DAO</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/marques-de-abadia-reserva-rioja-spain-2016.html"  class="wl-info">
+                <span class="wl-name">Marques De Abadia Reserva Rioja Spain 2016</span>
+                <span class="wl-details">MARQUES DE ABADIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">5300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/portal-colheita-quinta-do-portal-douro-portugal-2021.html"  class="wl-info">
+                <span class="wl-name">Portal Colheita Quinta do Portal Douro Portugal 2021</span>
+                <span class="wl-details">QUINTA DO PORTAL,Douro, Portugal</span>
+            </a>
+            <div class="wl-price">5300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-real-reserva-rioja-spain-2018.html"  class="wl-info">
+                <span class="wl-name">Vina Real Reserva Rioja Spain 2018</span>
+                <span class="wl-details">VIÑA REAL,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-cubilloo-crianza-lopez-de-heredia-rioja-spain-2016.html"  class="wl-info">
+                <span class="wl-name">Vina Cubilloo Crianza Lopez de Heredia Rioja Spain 2016</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sierra-cantabria-reserva-rioja-spain-2017.html"  class="wl-info">
+                <span class="wl-name">Sierra Cantabria Reserva Rioja Spain 2017</span>
+                <span class="wl-details">SIERRA CANTABRIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">8400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-bosconia-reserva-lopez-de-heredia-rioja-spain-2013.html"  class="wl-info">
+                <span class="wl-name">Vina Bosconia Reserva Lopez de Heredia Rioja Spain 2013</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/picaro-del-aguila-vinas-viejas-dominio-del-aguila-ribera-del-duero-spain-2022.html"  class="wl-info">
+                <span class="wl-name">Picaro del Aguila Vinas Viejas Dominio del Aguila Ribera del Duero Spain 2022</span>
+                <span class="wl-details">DOMINIO DEL ÁGUILA,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">9900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/quinta-da-pellada-alvaro-castro-dao-portugal-2012.html"  class="wl-info">
+                <span class="wl-name">Quinta da Pellada Alvaro Castro Dao Portugal 2012</span>
+                <span class="wl-details">ALVARO CASTRO,Dão, Portugal</span>
+            </a>
+            <div class="wl-price">10900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/arzuaga-reserva-bodegas-arzuaga-ribera-del-duero-spain-2020.html"  class="wl-info">
+                <span class="wl-name">Arzuaga Reserva Bodegas Arzuaga Ribera del Duero Spain 2020</span>
+                <span class="wl-details">BODEGAS ARZUAGA,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">11500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pago-de-carraovejas-finca-y-bdega-ribera-del-duero-spain-2022.html"  class="wl-info">
+                <span class="wl-name">Pago de Carraovejas Finca Y Bdega Ribera del Duero Spain 2022</span>
+                <span class="wl-details">PAGO DE CARRAOVEJAS,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">12900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-tondonia-reserva-lopez-de-heredia-rioja-spain-2012.html"  class="wl-info">
+                <span class="wl-name">Vina Tondonia Reserva Lopez de Heredia Rioja Spain 2012</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">15600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pintia-bodegas-y-vinedos-pintia-toro-spain-2019.html"  class="wl-info">
+                <span class="wl-name">Pintia Bodegas y Vinedos Pintia Toro Spain 2019</span>
+                <span class="wl-details">BODEGAS Y VINEDOS PINTIA,Toro, Spain</span>
+            </a>
+            <div class="wl-price">17600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-tondonia-gran-reserva-lopez-de-heredia-rioja-spain-2004-2001.html"  class="wl-info">
+                <span class="wl-name">Vina Tondonia Gran Reserva Lopez de Heredia Rioja Spain 2004/2001</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">64000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-real-reserva-rioja-spain-2019.html"  class="wl-info">
+                <span class="wl-name">Vina Real Reserva Rioja Spain 2019</span>
+                <span class="wl-details">VIÑA REAL,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">6600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/arzuaga-reserva-bodegas-arzuaga-ribera-del-duero-spain-2021.html"  class="wl-info">
+                <span class="wl-name">Arzuaga Reserva Bodegas Arzuaga Ribera del Duero Spain 2021</span>
+                <span class="wl-details">BODEGAS ARZUAGA,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">14600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-tondonia-gran-reserva-lopez-de-heredia-rioja-spain-2004.html"  class="wl-info">
+                <span class="wl-name">Vina Tondonia Gran Reserva Lopez de Heredia Rioja Spain 2004</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">64000 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">SYRAH, GRENACHE, MOURVEDRE, CARIGNAN <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">MEDITERRANIAN VARIETIES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/clos-gebrat-priorat-spain-2023.html"  class="wl-info">
+                <span class="wl-name">Clos Gebrat Priorat Spain 2023</span>
+                <span class="wl-details">CLOS GEBRAT,Priorat, Spain</span>
+            </a>
+            <div class="wl-price">3100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cuvee-auzan-chateau-lermite-dauzan-costieres-de-nimes-rhone-france-2022.html"  class="wl-info">
+                <span class="wl-name">Cuvee Auzan Chateau L&#x27;Ermite D&#x27;Auzan Costieres de Nimes Rhone France 2022</span>
+                <span class="wl-details">CHÂTEAU L&#x27;ERMITE D&#x27;AUZAN,Côtes de Nîmes, France</span>
+            </a>
+            <div class="wl-price">3400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/syrah-vincze-bela-meszhegy-hungary-2016.html"  class="wl-info">
+                <span class="wl-name">Syrah Vincze Bela Meszhegy Hungary 2016</span>
+                <span class="wl-details">VINCZE BÉLA,Meszhegy, Hungary</span>
+            </a>
+            <div class="wl-price">5300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/tenecity-shiraz-barossa-valley-mclaren-vale-australia-2023.html"  class="wl-info">
+                <span class="wl-name">Tenecity Shiraz Barossa Valley McLaren Vale Australia 2023</span>
+                <span class="wl-details">TENECITY,McLaren Vale, Australia</span>
+            </a>
+            <div class="wl-price">5600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/maranones-bodega-maranones-madrid-spain-2020.html"  class="wl-info">
+                <span class="wl-name">Maranones Bodega Maranones Madrid Spain 2020</span>
+                <span class="wl-details">BODEGA MARANONES,Madrid, Spain</span>
+            </a>
+            <div class="wl-price">6100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/dido-venus-la-universal-montsant-cataluna-spain-2021.html"  class="wl-info">
+                <span class="wl-name">Dido Venus la Universal Montsant Cataluna Spain 2021</span>
+                <span class="wl-details">VENUS LA UNIVERSAL,Montsant, Spain</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/el-mentridano-viticola-mentridana-castilla-la-mancha-spain-2022.html"  class="wl-info">
+                <span class="wl-name">El Mentridano Viticola Mentridana Castilla-La Mancha Spain 2022</span>
+                <span class="wl-details">VITÍCOLA MENTRIDANA,Castilla-La Mancha, Spain</span>
+            </a>
+            <div class="wl-price">7300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/clos-de-tafall-priorat-spain-2022.html"  class="wl-info">
+                <span class="wl-name">Clos de Tafall Priorat Spain 2022</span>
+                <span class="wl-details">CLOS DE TAFALL,Priorat, Spain</span>
+            </a>
+            <div class="wl-price">8700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/venus-la-universal-monsant-spain-2019.html"  class="wl-info">
+                <span class="wl-name">Venus la Universal Monsant Spain 2019</span>
+                <span class="wl-details">VENUS LA UNIVERSAL,Montsant, Spain</span>
+            </a>
+            <div class="wl-price">10900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cote-rotie-la-germine-domaine-duclaux-rhone-france-2019.html"  class="wl-info">
+                <span class="wl-name">Cote-Rotie La Germine Domaine Duclaux Rhone France 2019</span>
+                <span class="wl-details">DOMAINE DUCLAUX,Rhône, France</span>
+            </a>
+            <div class="wl-price">11300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateauneuf-du-pape-gabriel-meffre-laurus-rhone-france-2016.html"  class="wl-info">
+                <span class="wl-name">Chateauneuf-du-Pape Gabriel Meffre Laurus Rhone France 2016</span>
+                <span class="wl-details">GABRIEL MEFFRE,Rhône, France</span>
+            </a>
+            <div class="wl-price">15500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cims-de-porrera-classic-perelada-priorat-spain-2017.html"  class="wl-info">
+                <span class="wl-name">Cims de Porrera Classic Perelada Priorat Spain 2017</span>
+                <span class="wl-details">PERELADA,Priorat, Spain</span>
+            </a>
+            <div class="wl-price">17000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/mas-martinet-els-escurcons-priorat-spain-2008.html"  class="wl-info">
+                <span class="wl-name">Mas Martinet Els Escurcons Priorat Spain 2008</span>
+                <span class="wl-details">MAS MARTINET,Priorat, Spain</span>
+            </a>
+            <div class="wl-price">27900 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">STILL WINES <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">STILL WINES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/enrosado-orange-altolandon-manchuela-spain-2021.html"  class="wl-info">
+                <span class="wl-name">Enrosado Orange Altolandon Manchuela Spain 2021</span>
+                <span class="wl-details">ALTOLANDON,Manchuela, Spain</span>
+            </a>
+            <div class="wl-price">4400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/furmint-aus-dem-quarz-wenzel-burgenland-austria-2018.html"  class="wl-info">
+                <span class="wl-name">Furmint Aus Dem Quarz Wenzel Burgenland Austria 2018</span>
+                <span class="wl-details">WENZEL,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">4500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/naked-rose-weingut-heinrich-burgenland-austria-2020.html"  class="wl-info">
+                <span class="wl-name">Naked Rose Weingut Heinrich Burgenland Austria 2020</span>
+                <span class="wl-details">WEINGUT HEINRICH,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">4700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ribolla-simcic-marjan-goriska-brda-slovenia-2019.html"  class="wl-info">
+                <span class="wl-name">Ribolla Simcic Marjan Goriska Brda Slovenia 2019</span>
+                <span class="wl-details">SIMČIČ MARJAN,Goriška Brda, Slovenia</span>
+            </a>
+            <div class="wl-price">5400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/muscateller-alte-reben-mit-achtung-loimer-niederosterreich-austria-2021.html"  class="wl-info">
+                <span class="wl-name">Muscateller Alte Reben mit Achtung Loimer Niederosterreich Austria 2021</span>
+                <span class="wl-details">LOIMER,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">8300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/graue-freyheit-weingut-heinrich-burgenland-austria-2018.html"  class="wl-info">
+                <span class="wl-name">Graue Freyheit Weingut Heinrich Burgenland Austria 2018</span>
+                <span class="wl-details">WEINGUT HEINRICH,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">8100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/traminer-alte-reben-mit-achtung-loimer-niederosterreich-austria-2016.html"  class="wl-info">
+                <span class="wl-name">Traminer Alte Reben mit Achtung Loimer Niederosterreich Austria 2016</span>
+                <span class="wl-details">LOIMER,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/eulogio-pomares-maceracion-con-pieles-zarate-rias-baixas-spain-2017.html"  class="wl-info">
+                <span class="wl-name">Eulogio Pomares Maceracion Con Pieles Zarate Rias Baixas Spain 2017</span>
+                <span class="wl-details">ZÁRATE,Rías Baixas, Spain</span>
+            </a>
+            <div class="wl-price">13600 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">SAUVIGNON BLANC, CHENIN BLANC, MUSCADET &amp; Co. <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">LOIRE VALLEY VARIETIES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chinon-aoc-domaine-jean-maurice-raffault-loire-france-2024.html"  class="wl-info">
+                <span class="wl-name">Chinon AOC Domaine Jean Maurice Raffault Loire France 2024</span>
+                <span class="wl-details">DOMAINE JEAN MAURICE RAFFAULT,Loire, France</span>
+            </a>
+            <div class="wl-price">4200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chenin-blanc-seriously-cool-waterkloof-stellenbosch-south-africa-2023.html"  class="wl-info">
+                <span class="wl-name">Chenin Blanc Seriously Cool Waterkloof Stellenbosch South Africa 2023</span>
+                <span class="wl-details">WATERKLOOF,Stellenbosch, South Africa</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sauvignon-blanc-ned-marlborough-new-zealand-2025.html"  class="wl-info">
+                <span class="wl-name">Sauvignon Blanc Ned Marlborough New Zealand 2025</span>
+                <span class="wl-details">NED,Marlborough, New Zealand</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sauvignon-blanc-sattlerhof-sudsteiermark-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Sauvignon Blanc Sattlerhof SudSteiermark Austria 2022</span>
+                <span class="wl-details">SATTLERHOF,Südsteiermark, Austria</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/muscadet-sevre-et-maine-sur-lie-chateau-thebaut-haute-fevrie-loire-2020.html"  class="wl-info">
+                <span class="wl-name">Muscadet Sevre et Maine Sur Lie Chateau Thebaut Haute Fevrie Loire 2020</span>
+                <span class="wl-details">CHÂTEAU THEBAUT,Loire, France</span>
+            </a>
+            <div class="wl-price">5500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/monetou-salon-domaine-la-clef-du-recit-loire-france-2023.html"  class="wl-info">
+                <span class="wl-name">Monetou-Salon Domaine La Clef du Recit Loire France 2023</span>
+                <span class="wl-details">DOMAINE LA CLEF DU RECIT,Loire, France</span>
+            </a>
+            <div class="wl-price">6400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sauvignon-blanc-reserve-domaine-ciringa-stajerska-slovenia-2018.html"  class="wl-info">
+                <span class="wl-name">Sauvignon Blanc Reserve Domaine Ciringa Stajerska Slovenia 2018</span>
+                <span class="wl-details">DOMAINE CIRINGA,Stajerska, Slovenia</span>
+            </a>
+            <div class="wl-price">8400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sancerre-lamiral-gitton-pere-&amp;-fils-loire-france-2023.html"  class="wl-info">
+                <span class="wl-name">Sancerre L&#x27;Amiral Gitton Pere &amp; Fils Loire France 2023</span>
+                <span class="wl-details">GITTON PERE &amp; FILS,Loire, France</span>
+            </a>
+            <div class="wl-price">8600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/saumur-domaine-guilberteau-loire-france-2022.html"  class="wl-info">
+                <span class="wl-name">Saumur Domaine Guilberteau Loire France 2022</span>
+                <span class="wl-details">DOMAINE GUILBERTEAU,Loire, France</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sancerre-silex-galinot-gitton-pere-&amp;-fils-loire-france-2019.html"  class="wl-info">
+                <span class="wl-name">Sancerre Silex Galinot Gitton Pere &amp; Fils Loire France 2019</span>
+                <span class="wl-details">GITTON PERE &amp; FILS,Loire, France</span>
+            </a>
+            <div class="wl-price">11900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sancerre-silex-galinot-gitton-pere-&amp;-fils-loire-france-2022.html"  class="wl-info">
+                <span class="wl-name">Sancerre Silex Galinot Gitton Pere &amp; Fils Loire France 2022</span>
+                <span class="wl-details">GITTON PERE &amp; FILS,Loire, France</span>
+            </a>
+            <div class="wl-price">11300 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">ROSE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">GREAT PINK</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/suez-spatburgunder-rose-reichsrat-von-buhl-pfalz-germany-2017.html"  class="wl-info">
+                <span class="wl-name">Suez Spatburgunder Rose Reichsrat von Buhl Pfalz Germany 2017</span>
+                <span class="wl-details">REICHSRAT VON BUHL,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">7800 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">COMMON PINK</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/la-riviera-domaine-de-la-sangliere-aop-cotes-de-provence-france-2022.html"  class="wl-info">
+                <span class="wl-name">La Riviera Domaine de la Sangliere AOP Cotes de Provence France 2022</span>
+                <span class="wl-details">DOMAINE DE LA SANGLIÈRE,Provence, France</span>
+            </a>
+            <div class="wl-price">4300 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CLARET</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sainte-cecile-rose-chateau-lermite-dauzan-costieres-de-nimes-rhone-france-2023.html"  class="wl-info">
+                <span class="wl-name">Sainte Cecile Rose Chateau L&#x27;Ermite D&#x27;Auzan Costieres de Nimes Rhone France 2023</span>
+                <span class="wl-details">CHÂTEAU L&#x27;ERMITE D&#x27;AUZAN,Côtes de Nîmes, France</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/picaro-del-aguila-claret-vinas-viejas-dominio-del-aguila-ribera-del-duero-spain-2023.html"  class="wl-info">
+                <span class="wl-name">Picaro del Aguila Claret Vinas Viejas Dominio del Aguila Ribera del Duero Spain 2023</span>
+                <span class="wl-details">DOMINIO DEL ÁGUILA,Ribera del Duero, Spain</span>
+            </a>
+            <div class="wl-price">11900 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">RIESLING, GRUNER VELTLINER &amp; Co. <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">GERMAN &amp; AUSTRIAN VARIETIES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/hold-and-hollo-dry-tokaj-hungary-2023.html"  class="wl-info">
+                <span class="wl-name">Hold and Hollo Dry Tokaj Hungary 2023</span>
+                <span class="wl-details">HOLD AND HOLLO,Tokaj, Hungary</span>
+            </a>
+            <div class="wl-price">3800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gruner-veltliner-domaene-gobelsburg-kamptal-niederosterreich-austria-2024.html"  class="wl-info">
+                <span class="wl-name">Gruner Veltliner Domaene Gobelsburg Kamptal Niederosterreich Austria 2024</span>
+                <span class="wl-details">DOMAENE GOBELSBURG,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">3900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gluegglich-weiss-loimer-niederosterreich-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Gluegglich Weiss Loimer Niederosterreich Austria 2022</span>
+                <span class="wl-details">LOIMER,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">4700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-nahesteiner-diel-nahe-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Riesling Nahesteiner Diel Nahe Germany 2022</span>
+                <span class="wl-details">DIEL,Nahe, Germany</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-bruno-dry-karthauserhof-mozel-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Riesling Bruno Dry Karthauserhof Mozel Germany 2022</span>
+                <span class="wl-details">KARTHÄUSERHOF,Mosel, Germany</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-trocken-dq-wittmann-100-hugel-rheinhessen-germany-2024.html"  class="wl-info">
+                <span class="wl-name">Riesling Trocken DQ Wittmann 100 Hugel Rheinhessen Germany 2024</span>
+                <span class="wl-details">WITTMANN,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">5100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/weisser-schiefer-welchriesling-qualitatswein-burgenland-austria-2018.html"  class="wl-info">
+                <span class="wl-name">Weisser Schiefer Welchriesling Qualitatswein Burgenland Austria 2018</span>
+                <span class="wl-details">WEISSER SCHIEFER,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">5500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-niersteiner-trocken-louis-guntrum-rheinhessen-germany-2023.html"  class="wl-info">
+                <span class="wl-name">Riesling Niersteiner Trocken Louis Guntrum Rheinhessen Germany 2023</span>
+                <span class="wl-details">LOUIS GUNTRUM,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">5600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kerner-puntscheit-bozen-sudtirol-alto-adige-italy-2022.html"  class="wl-info">
+                <span class="wl-name">Kerner Puntscheit Bozen Sudtirol Alto Adige Italy 2022</span>
+                <span class="wl-details">PUNTSCHEIT,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">5300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/muller-thurgau-san-michele-appiano-alto-adige-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Muller Thurgau San Michele Appiano Alto Adige Italy 2020</span>
+                <span class="wl-details">SAN MICHELE APPIANO,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">5400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/leiten-gewurztraminer-nals-margreid-alto-adige-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Leiten Gewurztraminer Nals Margreid Alto Adige Italy 2023</span>
+                <span class="wl-details">NALS MARGREID,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">5600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-trocken-monchhof-grand-lay-mozel-saar-ruver-germany-2023.html"  class="wl-info">
+                <span class="wl-name">Riesling Trocken Monchhof Grand Lay Mozel-Saar-Ruver Germany 2023</span>
+                <span class="wl-details">MÖNCHHOF,Mosel-Saar-Ruwer, Germany</span>
+            </a>
+            <div class="wl-price">5700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-loiserberg-langenlois-loimer-niederosterreich-austria-2018.html"  class="wl-info">
+                <span class="wl-name">Riesling Loiserberg Langenlois Loimer Niederosterreich Austria 2018</span>
+                <span class="wl-details">LOIMER,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gruner-veltliner-obere-steigen-huber-traisental-austria-2023.html"  class="wl-info">
+                <span class="wl-name">Gruner Veltliner Obere Steigen Huber Traisental Austria 2023</span>
+                <span class="wl-details">HUBER,Traisental, Austria</span>
+            </a>
+            <div class="wl-price">6200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/rudesheim-riesling-balthazar-ress-rheingau-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Rudesheim Riesling Balthazar Ress Rheingau Germany 2022</span>
+                <span class="wl-details">BALTHAZAR RESS,Rheingau, Germany</span>
+            </a>
+            <div class="wl-price">6200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gewurztraminer-les-sorcieres-chateu-de-riquewihir-dopff-&amp;-irion-alsace-2018.html"  class="wl-info">
+                <span class="wl-name">Gewurztraminer Les Sorcieres Chateu de Riquewihir Dopff &amp; Irion Alsace 2018</span>
+                <span class="wl-details">DOPFF &amp; IRION,Alsace, France</span>
+            </a>
+            <div class="wl-price">7200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-schellenbrunnen-weingut-heitlinger-baden-germany-2019.html"  class="wl-info">
+                <span class="wl-name">Riesling Schellenbrunnen Weingut Heitlinger Baden Germany 2019</span>
+                <span class="wl-details">WEINGUT HEITLINGER,Baden, Germany</span>
+            </a>
+            <div class="wl-price">7400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-schweigen-julg-pfalz-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Riesling Schweigen Julg Pfalz Germany 2022</span>
+                <span class="wl-details">JULG,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">8600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-eierfels-diel-nahe-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Riesling Eierfels Diel Nahe Germany 2022</span>
+                <span class="wl-details">DIEL,Nahe, Germany</span>
+            </a>
+            <div class="wl-price">8800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-alte-reben-van-volxem-mosel-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Riesling Alte Reben Van Volxem Mosel Germany 2022</span>
+                <span class="wl-details">VAN VOLXEM,Mosel, Germany</span>
+            </a>
+            <div class="wl-price">9200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-ungsteiner-herrenberg-gg-pfalz-germany-2021.html"  class="wl-info">
+                <span class="wl-name">Riesling Ungsteiner Herrenberg GG Pfalz Germany 2021</span>
+                <span class="wl-details">PFALZ,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">10900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gruner-veltliner-renner-1ste-lage-schloss-gobelsburg-kamptal-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Gruner Veltliner Renner 1ste Lage Schloss Gobelsburg Kamptal Austria 2022</span>
+                <span class="wl-details">SCHLOSS GOBELSBURG,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">11900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-heiligenstein-zobing-1otw-schloss-gobelsburg-kamptal-austria-2021.html"  class="wl-info">
+                <span class="wl-name">Riesling Heiligenstein Zobing 1OTW Schloss Gobelsburg Kamptal Austria 2021</span>
+                <span class="wl-details">SCHLOSS GOBELSBURG,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">12300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-ruppertsberger-reiterpfad-hofstuck-gg-pfalz-germany-2020.html"  class="wl-info">
+                <span class="wl-name">Riesling Ruppertsberger Reiterpfad Hofstuck GG Pfalz Germany 2020</span>
+                <span class="wl-details">HOFSTÜCK,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">12600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-hohenmorgen-gg-dr.-burklin-wolf-pfalz-germany-2018.html"  class="wl-info">
+                <span class="wl-name">Riesling Hohenmorgen GG Dr. Burklin-Wolf Pfalz Germany 2018</span>
+                <span class="wl-details">DR. BÜRKLIN-WOLF,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">20500 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">RED/PINOT, GAMAY &amp; ALIKE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BURGUNDY, JURA, SAVOIE VARIETIES &amp; SIMILAR</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gamay-les-perdriettes-guy-allion-touraine-loire-france-2023.html"  class="wl-info">
+                <span class="wl-name">Gamay Les Perdriettes Guy Allion Touraine Loire France 2023</span>
+                <span class="wl-details">GUY ALLION,Loire, France</span>
+            </a>
+            <div class="wl-price">3900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gluegglich-rot-loimer-niederosterreich-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Gluegglich Rot Loimer Niederosterreich Austria 2022</span>
+                <span class="wl-details">LOIMER,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">4800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-noir-tradition-philipp-kuhn-pfalz-germany-2021.html"  class="wl-info">
+                <span class="wl-name">Pinot Noir Tradition Philipp Kuhn Pfalz Germany 2021</span>
+                <span class="wl-details">PHILIPP KUHN,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/spatburgunder-muschelkalk-weingut-j.neus-rheinhessen-germany-2021.html"  class="wl-info">
+                <span class="wl-name">Spatburgunder Muschelkalk Weingut J.Neus Rheinhessen Germany 2021</span>
+                <span class="wl-details">J. NEUS,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/spatburgunder-holger-koch-kaiserstuhl-baden-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Spatburgunder Holger Koch Kaiserstuhl Baden Germany 2022</span>
+                <span class="wl-details">HOLGER KOCH,Baden, Germany</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/morgon-georges-descombes-beaujolais-cru-france-2021.html"  class="wl-info">
+                <span class="wl-name">Morgon Georges Descombes Beaujolais Cru France 2021</span>
+                <span class="wl-details">GEORGES DESCOMBES,Beaujolais, France</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/arbois-rouge-tradition-domaine-rolet-jura-france-2023.html"  class="wl-info">
+                <span class="wl-name">Arbois Rouge Tradition Domaine Rolet Jura France 2023</span>
+                <span class="wl-details">DOMAINE ROLET,Jura, France</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/moulin-a-vent-domaine-richard-rottiers-beaujolais-france-2021.html"  class="wl-info">
+                <span class="wl-name">Moulin a Vent Domaine Richard Rottiers Beaujolais France 2021</span>
+                <span class="wl-details">DOMAINE RICHARD ROTTIERS,Beaujolais, France</span>
+            </a>
+            <div class="wl-price">7300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/spatburgunder-tradition-kunstler-rheingau-germany-2022.html"  class="wl-info">
+                <span class="wl-name">Spatburgunder Tradition Kunstler Rheingau Germany 2022</span>
+                <span class="wl-details">KÜNSTLER,Rheingau, Germany</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cotes-du-jura-jean-bourdy-a-arlay-jura-france-2018.html"  class="wl-info">
+                <span class="wl-name">Cotes du Jura Jean Bourdy a Arlay Jura France 2018</span>
+                <span class="wl-details">JEAN BOURDY,Jura, France</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cote-de-nuits-villages-bourgogne-france-2020.html"  class="wl-info">
+                <span class="wl-name">Cote de Nuits-Villages Bourgogne France 2020</span>
+                <span class="wl-details">BOURGUNDY SELECTION,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">9900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/hautes-cotes-de-nuits-au-vallon-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Hautes Cotes de Nuits Au Vallon Bourgogne France 2022</span>
+                <span class="wl-details">AU VALLON,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">10300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/savigny-les-beaune-patriarche-bourgogne-france-2018.html"  class="wl-info">
+                <span class="wl-name">Savigny-les-Beaune Patriarche Bourgogne France 2018</span>
+                <span class="wl-details">PATRIARCHE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">10500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kirschgarten-gg-pinot-noir-philipp-kuhn-pfalz-germany-2020.html"  class="wl-info">
+                <span class="wl-name">Kirschgarten GG Pinot Noir Philipp Kuhn Pfalz Germany 2020</span>
+                <span class="wl-details">PHILIPP KUHN,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">12500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/saint-aubin-1er-cru-le-charmois-au-pied-du-mont-chauve-bourgogne-2017.html"  class="wl-info">
+                <span class="wl-name">Saint-Aubin 1er Cru Le Charmois Au Pied du Mont Chauve Bourgogne 2017</span>
+                <span class="wl-details">AU PIED DU MONT CHAUVE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">13600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/monthelie-domaine-pierre-morey-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Monthelie Domaine Pierre Morey Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE PIERRE MOREY,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">14400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/beaune-clos-de-la-maladiere-domaine-cauvard-burgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Beaune Clos de la Maladiere Domaine Cauvard Burgogne France 2022</span>
+                <span class="wl-details">DOMAINE CAUVARD,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">14900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gevrey-chambertin-david-duband-bourgogne-france-2020.html"  class="wl-info">
+                <span class="wl-name">Gevrey-Chambertin David Duband Bourgogne France 2020</span>
+                <span class="wl-details">DAVID DUBAND,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">20400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/savigny-les-beaune-les-goudelettes-domaine-antonin-guyon-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Savigny-les-Beaune Les Goudelettes Domaine Antonin Guyon Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE ANTONIN GUYON,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">16800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ingelheimer-pares-spatburgunder-j.neus-rheinhessen-germany-2018.html"  class="wl-info">
+                <span class="wl-name">Ingelheimer Pares Spatburgunder J.Neus Rheinhessen Germany 2018</span>
+                <span class="wl-details">J. NEUS,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">16900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/aloxe-corton-domaine-bruno-clair-bourgogne-france-2020.html"  class="wl-info">
+                <span class="wl-name">Aloxe-Corton Domaine Bruno Clair Bourgogne France 2020</span>
+                <span class="wl-details">DOMAINE BRUNO CLAIR,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">19800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/nuits-saint-georges-aux-saints-juliens-domaine-de-montille-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Nuits-Saint-Georges Aux Saints-Juliens Domaine De Montille Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE DE MONTILLE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">20700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pommard-domaine-nicolas-rossignol-bourgogne-france-2017.html"  class="wl-info">
+                <span class="wl-name">Pommard Domaine Nicolas Rossignol Bourgogne France 2017</span>
+                <span class="wl-details">DOMAINE NICOLAS ROSSIGNOL,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">21000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chassagne-montrachet-1er-cru-clos-saint-jean-domaine-morey-coffinet-bourgogne-france-2021.html"  class="wl-info">
+                <span class="wl-name">Chassagne-Montrachet 1er Cru Clos Saint Jean Domaine Morey Coffinet Bourgogne France 2021</span>
+                <span class="wl-details">DOMAINE MOREY COFFINET,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">21600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chassagne-montrachet-1er-cru-clos-saint-jean-domaine-michel-niellin-bourgogne-france-2016.html"  class="wl-info">
+                <span class="wl-name">Chassagne-Montrachet 1er Cru Clos Saint Jean Domaine Michel Niellin Bourgogne France 2016</span>
+                <span class="wl-details">DOMAINE MICHEL NIELLIN,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">24000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gevrey-chambertin-les-perrieres-1er-cru-pierre-naigeon-bourgogne-france-2011.html"  class="wl-info">
+                <span class="wl-name">Gevrey-Chambertin Les Perrieres 1er Cru Pierre Naigeon Bourgogne France 2011</span>
+                <span class="wl-details">PIERRE NAIGEON,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">30600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vosne-romanee-domaine-jean-grivot-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Vosne-Romanee Domaine Jean Grivot Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE JEAN GRIVOT,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">31200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vosne-romanee-chateau-de-beaufort-premier-cru-la-croix-rameau-bourgogne-france-2009.html"  class="wl-info">
+                <span class="wl-name">Vosne-Romanee Chateau De Beaufort Premier Cru La Croix Rameau Bourgogne France 2009</span>
+                <span class="wl-details">CHÂTEAU DE BEAUFORT,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">65100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/guy-allion-les-quatre-pierres-cabernet-franc-aop-loire-france-2023.html"  class="wl-info">
+                <span class="wl-name">Guy Allion Les Quatre Pierres Cabernet Franc AOP Loire France 2023</span>
+                <span class="wl-details">GUY ALLION,Loire, France</span>
+            </a>
+            <div class="wl-price">3700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/naked-red-weingut-heinrich-burgenland-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Naked Red Weingut Heinrich Burgenland Austria 2022</span>
+                <span class="wl-details">WEINGUT HEINRICH,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">4100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chinon-les-picasses-domaine-jean-maurice-raffault-loire-france-2020.html"  class="wl-info">
+                <span class="wl-name">Chinon Les Picasses Domaine Jean Maurice Raffault Loire France 2020</span>
+                <span class="wl-details">DOMAINE JEAN MAURICE RAFFAULT,Loire, France</span>
+            </a>
+            <div class="wl-price">4600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/blaufrankisch-trocken-johannes-trapl-carnuntum-austria-2019.html"  class="wl-info">
+                <span class="wl-name">Blaufrankisch Trocken Johannes Trapl Carnuntum Austria 2019</span>
+                <span class="wl-details">JOHANNES TRAPL,Carnuntum, Austria</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kekfrankos-vincze-bela-meszhegy-hungary-2012.html"  class="wl-info">
+                <span class="wl-name">Kekfrankos Vincze Bela Meszhegy Hungary 2012</span>
+                <span class="wl-details">VINCZE BÉLA,Hungary</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cuatro-pasos-black-martin-codax-bierzo-spain-2019.html"  class="wl-info">
+                <span class="wl-name">Cuatro Pasos Black Martin Codax Bierzo Spain 2019</span>
+                <span class="wl-details">MARTÍN CÓDAX,Bierzo, Spain</span>
+            </a>
+            <div class="wl-price">6200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/st.laurent-reserve-schloss-gobelsburg-kamptal-austria-2020.html"  class="wl-info">
+                <span class="wl-name">St.Laurent Reserve Schloss Gobelsburg Kamptal Austria 2020</span>
+                <span class="wl-details">SCHLOSS GOBELSBURG,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">10900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chinon-les-puy-domaine-jean-maurice-raffault-loire-france-2017.html"  class="wl-info">
+                <span class="wl-name">Chinon Les Puy Domaine Jean Maurice Raffault Loire France 2017</span>
+                <span class="wl-details">DOMAINE JEAN MAURICE RAFFAULT,Loire, France</span>
+            </a>
+            <div class="wl-price">12400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bourgueil-les-perrieres-catherine-&amp;-pierre-breton-loire-france-2017.html"  class="wl-info">
+                <span class="wl-name">Bourgueil Les Perrieres Catherine &amp; Pierre Breton Loire France 2017</span>
+                <span class="wl-details">CATHERINE &amp; PIERRE BRETON,Loire, France</span>
+            </a>
+            <div class="wl-price">15700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/blaufrankisch-durrau-weninger-burgenland-austria-2008.html"  class="wl-info">
+                <span class="wl-name">Blaufrankisch Durrau Weninger Burgenland Austria 2008</span>
+                <span class="wl-details">WENINGER,Burgenland, Austria</span>
+            </a>
+            <div class="wl-price">15800 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">RED <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BURGUNDY, JURA, SAVOIE VARIETIES &amp; SIMILAR</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/saint-aubin-1er-cru-le-charmois-au-pied-du-mont-chauve-bourgogne-2018.html"  class="wl-info">
+                <span class="wl-name">Saint-Aubin 1er Cru Le Charmois Au Pied du Mont Chauve Bourgogne 2018</span>
+                <span class="wl-details">AU PIED DU MONT CHAUVE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">16500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chassagne-montrachet-1er-cru-clos-saint-jean-domaine-michel-niellon-bourgogne-france-2016.html"  class="wl-info">
+                <span class="wl-name">Chassagne-Montrachet 1er Cru Clos Saint Jean Domaine Michel Niellon Bourgogne France 2016</span>
+                <span class="wl-details">DOMAINE MICHEL NIELLON,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">24000 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">OTHER GREAT VARIETIES &amp; TERROIRS <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">AUTOCHTHONES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/weingut-heitlinger-red-baden-germany-2018.html"  class="wl-info">
+                <span class="wl-name">Weingut Heitlinger Red Baden Germany 2018</span>
+                <span class="wl-details">WEINGUT HEITLINGER,Baden, Germany</span>
+            </a>
+            <div class="wl-price">3100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zweigelt-tradition-markus-huber-niederosterreich-austria-2021.html"  class="wl-info">
+                <span class="wl-name">Zweigelt Tradition Markus Huber Niederosterreich Austria 2021</span>
+                <span class="wl-details">MARKUS HUBER,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/lirica-primitivo-di-manduria-produttori-di-manduria-puglia-italy-2021.html"  class="wl-info">
+                <span class="wl-name">Lirica Primitivo di Manduria Produttori di Manduria Puglia Italy 2021</span>
+                <span class="wl-details">PRODUTTORI DI MANDURIA,Puglia, Italy</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/favinia-le-sciabiche-sicily-italy-2015.html"  class="wl-info">
+                <span class="wl-name">Favinia Le Sciabiche Sicily Italy 2015</span>
+                <span class="wl-details">LE SCIABICHE,Sicily, Italy</span>
+            </a>
+            <div class="wl-price">4800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bistro-fabien-jouves-cahors-france-2018.html"  class="wl-info">
+                <span class="wl-name">Bistro Fabien Jouves Cahors France 2018</span>
+                <span class="wl-details">FABIEN JOUVES,Cahors, France</span>
+            </a>
+            <div class="wl-price">5800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/malbec-ultra-kaiken-mendoza-argentina-2021.html"  class="wl-info">
+                <span class="wl-name">Malbec Ultra Kaiken Mendoza Argentina 2021</span>
+                <span class="wl-details">KAIKEN,Mendoza, Argentina</span>
+            </a>
+            <div class="wl-price">6400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/saperavi-rcheuli-qvevri-tchotiashvili-kakheti-georgia-2020.html"  class="wl-info">
+                <span class="wl-name">Saperavi Rcheuli Qvevri Tchotiashvili Kakheti Georgia 2020</span>
+                <span class="wl-details">TCHOTIASHVILI,Kakheti, Georgia</span>
+            </a>
+            <div class="wl-price">6600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zinfandel-federalist-lodi-california-usa-2023.html"  class="wl-info">
+                <span class="wl-name">Zinfandel Federalist Lodi California USA 2023</span>
+                <span class="wl-details">FEDERALIST,Lodi, USA</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/orgion-mavrodafni-sclavus-cephalonia-slopes-de-of-enos-greece-2020.html"  class="wl-info">
+                <span class="wl-name">Orgion Mavrodafni Sclavus Cephalonia Slopes de of Enos Greece 2020</span>
+                <span class="wl-details">SCLAVUS,Cephalonia, Greece</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/aynat-nero-davola-canicatti-sicilia-doc-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Aynat Nero d&#x27;Avola Canicatti Sicilia DOC Italy 2019</span>
+                <span class="wl-details">AYNAT,Sicily, Italy</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/7-fuentes-suertes-del-marques-valle-de-la-orotava-tenerife-spain-2020.html"  class="wl-info">
+                <span class="wl-name">7 Fuentes Suertes del Marques Valle de la Orotava Tenerife Spain 2020</span>
+                <span class="wl-details">SUERTES DEL MARQUÉS,Tenerife, Spain</span>
+            </a>
+            <div class="wl-price">7900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/xarello-finca-viladellops-massis-del-garraf-penedes-spain-2024.html"  class="wl-info">
+                <span class="wl-name">Xarello Finca Viladellops Massis del Garraf Penedes Spain 2024</span>
+                <span class="wl-details">VILADELLOPS,Penedès, Cataluña, Spain</span>
+            </a>
+            <div class="wl-price">3700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/weingut-heitlinger-white-bio-baden-germany-2021.html"  class="wl-info">
+                <span class="wl-name">Weingut Heitlinger White BIO Baden Germany 2021</span>
+                <span class="wl-details">WEINGUT HEITLINGER,Baden, Germany</span>
+            </a>
+            <div class="wl-price">3800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/badacsonyors-keknyelu-szolobirtok-hungary-2018.html"  class="wl-info">
+                <span class="wl-name">Badacsonyors Keknyelu Szolobirtok Hungary 2018</span>
+                <span class="wl-details">SZÓLÓBIRTOK,Hungary</span>
+            </a>
+            <div class="wl-price">4400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/alvarinho-muros-antigos-doc-vinho-verde-moncao-melgaco-portugal-2024.html"  class="wl-info">
+                <span class="wl-name">Alvarinho Muros Antigos DOC Vinho Verde Moncao Melgaco Portugal 2024</span>
+                <span class="wl-details">MUROS ANTIGOS,Minho, Portugal</span>
+            </a>
+            <div class="wl-price">4600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/langhe-arneis-barale-fratelli-piemonte-italy-2024.html"  class="wl-info">
+                <span class="wl-name">Langhe Arneis Barale Fratelli Piemonte Italy 2024</span>
+                <span class="wl-details">BARALE FRATELLI,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">5100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vacqueyras-domaine-le-colombier-rhone-france-2021.html"  class="wl-info">
+                <span class="wl-name">Vacqueyras Domaine Le Colombier Rhone France 2021</span>
+                <span class="wl-details">DOMAINE LE COLOMBIER,Rhône, France</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/albarino-zarate-rias-baixas-spain-2023.html"  class="wl-info">
+                <span class="wl-name">Albarino Zarate Rias Baixas Spain 2023</span>
+                <span class="wl-details">ZÁRATE,Rías Baixas, Spain</span>
+            </a>
+            <div class="wl-price">5500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/o-estranxeiro-godello-fento-wines-ribeira-sacra-spain-2023.html"  class="wl-info">
+                <span class="wl-name">O Estranxeiro Godello Fento Wines Ribeira Sacra Spain 2023</span>
+                <span class="wl-details">FENTO WINES,Ribeira Sacra, Spain</span>
+            </a>
+            <div class="wl-price">5700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/xarel-lo-xx-finca-viladellops-massis-del-garraf-penedes-spain-2021.html"  class="wl-info">
+                <span class="wl-name">Xarel-lo XX Finca Viladellops Massis del Garraf Penedes Spain 2021</span>
+                <span class="wl-details">VILADELLOPS,Penedès, Cataluña, Spain</span>
+            </a>
+            <div class="wl-price">6000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/terraviva-marios-47-trebbiano-dabruzzo-superiore-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Terraviva Mario&#x27;s 47 Trebbiano d&#x27;Abruzzo Superiore Italy 2019</span>
+                <span class="wl-details">TERRAVIVA,Abruzzo, Italy</span>
+            </a>
+            <div class="wl-price">6100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gavi-sole-sul-poggio-il-poggio-piemonte-italy-2018.html"  class="wl-info">
+                <span class="wl-name">Gavi Sole sul Poggio Il Poggio Piemonte Italy 2018</span>
+                <span class="wl-details">IL POGGIO,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">6700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/arbois-tradition-domaine-rolet-jura-france-2023.html"  class="wl-info">
+                <span class="wl-name">Arbois Tradition Domaine Rolet Jura France 2023</span>
+                <span class="wl-details">DOMAINE ROLET,Jura, France</span>
+            </a>
+            <div class="wl-price">6700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vermentino-colli-di-luni-etichetta-nera-lunae-bosoni-liguria-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Vermentino Colli Di Luni Etichetta Nera Lunae Bosoni Liguria Italy 2023</span>
+                <span class="wl-details">LUNAE BOSONI,Liguria, Italy</span>
+            </a>
+            <div class="wl-price">7300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/primus-quinta-da-pellada-dao-portugal-2014.html"  class="wl-info">
+                <span class="wl-name">Primus Quinta da Pellada Dao Portugal 2014</span>
+                <span class="wl-details">QUINTA DA PELLADA,Dão, Portugal</span>
+            </a>
+            <div class="wl-price">9200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-tondonia-reserva-lopez-de-heredia-rioja-spain-2013.html"  class="wl-info">
+                <span class="wl-name">Vina Tondonia Reserva Lopez de Heredia Rioja Spain 2013</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">15800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zinfandel-buena-vista-sonoma-california-usa-2023.html"  class="wl-info">
+                <span class="wl-name">Zinfandel Buena Vista Sonoma California USA 2023</span>
+                <span class="wl-details">BUENA VISTA,Sonoma, USA</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">OTHER CLASSIC BUBBLES <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">SPAIN</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cava-reserva-brut-la-vida-penedes-cataluna-2021.html"  class="wl-info">
+                <span class="wl-name">Cava Reserva Brut La Vida Penedes Cataluna 2021</span>
+                <span class="wl-details">LA VIDA,Penedès, Cataluña, Spain</span>
+            </a>
+            <div class="wl-price">4600 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">METHODE COL FONDO</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/prosecco-asolo-free-run-spumante-sui-lieviti-corvezzo-veneto-italy-2022.html"  class="wl-info">
+                <span class="wl-name">Prosecco Asolo Free Run Spumante Sui Lieviti Corvezzo Veneto Italy 2022</span>
+                <span class="wl-details">CORVEZZO,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">5700 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">METHODE CHARMAT</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/prosecco-di-valdobbiadene-superiore-marca-oro-valdo-veneto-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Prosecco di Valdobbiadene Superiore Marca Oro Valdo Veneto Italy 2023</span>
+                <span class="wl-details">VALDO,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">ITALY</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/rotari-blanc-de-blanc-extra-brut-trentodoc-2018.html"  class="wl-info">
+                <span class="wl-name">Rotari Blanc de Blanc Extra Brut Trentodoc 2018</span>
+                <span class="wl-details">ROTARI,Trentino, Italy</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/la-piemontina-societa-semplice-agricola-extra-brut-piemont-2018.html"  class="wl-info">
+                <span class="wl-name">La Piemontina Societa Semplice Agricola Extra Brut Piemont 2018</span>
+                <span class="wl-details">LA PIEMONTINA,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">GERMANY/AUSTRIA</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sekt-riesling-brut-barth-rheingau-2019.html"  class="wl-info">
+                <span class="wl-name">Sekt Riesling Brut Barth Rheingau 2019</span>
+                <span class="wl-details">BARTH,Rheingau, Germany</span>
+            </a>
+            <div class="wl-price">7200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sekt-tradition-brut-raumland-rheinhessen-2010.html"  class="wl-info">
+                <span class="wl-name">Sekt Tradition Brut Raumland Rheinhessen 2010</span>
+                <span class="wl-details">RAUMLAND,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">10600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sekt-blanc-de-blancs-schloss-gobelsburg-niederosterreich-2021.html"  class="wl-info">
+                <span class="wl-name">Sekt Blanc de Blancs Schloss Gobelsburg Niederosterreich 2021</span>
+                <span class="wl-details">SCHLOSS GOBELSBURG,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">12100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sekt-pinot-noir-red-brut-barth-rheingau-2015.html"  class="wl-info">
+                <span class="wl-name">Sekt Pinot Noir Red Brut Barth Rheingau 2015</span>
+                <span class="wl-details">BARTH,Rheingau, Germany</span>
+            </a>
+            <div class="wl-price">10800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sekt-rose-reserve-brut-raumland-rheinhessen-2014.html"  class="wl-info">
+                <span class="wl-name">Sekt Rose Reserve Brut Raumland Rheinhessen 2014</span>
+                <span class="wl-details">RAUMLAND,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">11600 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">FRANCE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/blanquette-de-limoux-cuvee-tradition-brut-delmas-languedoc-roussillon-france-2022.html"  class="wl-info">
+                <span class="wl-name">Blanquette de Limoux Cuvee Tradition Brut Delmas Languedoc-Roussillon France 2022</span>
+                <span class="wl-details">DELMAS,Languedoc-Roussillon, France</span>
+            </a>
+            <div class="wl-price">4300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-de-die-brut-monge-granon-rhona-2021.html"  class="wl-info">
+                <span class="wl-name">Cremant de Die Brut Monge Granon Rhona 2021</span>
+                <span class="wl-details">MONGE GRANON,Rhône, France</span>
+            </a>
+            <div class="wl-price">4400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-dalsace-brut-louis-sipp-2022.html"  class="wl-info">
+                <span class="wl-name">Cremant d&#x27;Alsace Brut Louis Sipp 2022</span>
+                <span class="wl-details">LOUIS SIPP,Alsace, France</span>
+            </a>
+            <div class="wl-price">5800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-de-bourgogne-brut-domaine-les-astrelles-nv.html"  class="wl-info">
+                <span class="wl-name">Cremant de Bourgogne Brut Domaine Les Astrelles NV</span>
+                <span class="wl-details">DOMAINE LES ASTRELLES,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">6400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-de-bourgogne-brut-rose-chartron-frebuchet-2022.html"  class="wl-info">
+                <span class="wl-name">Cremant de Bourgogne Brut Rose Chartron Frebuchet 2022</span>
+                <span class="wl-details">CHARTRON FREBUCHET,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">6600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cremant-dalsace-extra-brut-zero-dosage-dopff-&amp;-iron-nv.html"  class="wl-info">
+                <span class="wl-name">Cremant d&#x27;Alsace Extra Brut Zero Dosage Dopff &amp; Iron NV</span>
+                <span class="wl-details">DOPFF &amp; IRON,Alsace, France</span>
+            </a>
+            <div class="wl-price">7400 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">NEBBIOLO, SANGIOVESE, NERELLO &amp; Co. <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">PIEMONTE, TOSCANA &amp; OTHER ITALIAN VARIETIES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/lange-nebbiolo-bricdelbaio-piemonte-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Lange Nebbiolo Bricdelbaio Piemonte Italy 2023</span>
+                <span class="wl-details">BRICDELBAIO,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">5400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/calafata-scapigliato-toscana-italy-2022.html"  class="wl-info">
+                <span class="wl-name">Calafata Scapigliato Toscana Italy 2022</span>
+                <span class="wl-details">SCAPIGLIATO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">5700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/lohsa-morellino-di-scansano-poliziano-toscana-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Lohsa Morellino di Scansano Poliziano Toscana Italy 2023</span>
+                <span class="wl-details">POLIZIANO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/agamium-colline-novaresi-antichi-vigneti-di-cantalupo-piemonte-italy-2021.html"  class="wl-info">
+                <span class="wl-name">Agamium Colline Novaresi Antichi Vigneti di Cantalupo Piemonte Italy 2021</span>
+                <span class="wl-details">ANTICHI VIGNETI DI CANTALUPO,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sandro-fay-tei-rosso-di-valtellina-doc-lombardy-italy-2021.html"  class="wl-info">
+                <span class="wl-name">Sandro Fay Tei Rosso di Valtellina DOC Lombardy Italy 2021</span>
+                <span class="wl-details">SANDRO FAY,Lombardy, Italy</span>
+            </a>
+            <div class="wl-price">7800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vino-nobile-di-montepulciano-poliziano-toscana-italy-2021.html"  class="wl-info">
+                <span class="wl-name">Vino Nobile di Montepulciano Poliziano Toscana Italy 2021</span>
+                <span class="wl-details">POLIZIANO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">8200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vignalparco-chianti-classico-riserva-casa-emma-toscana-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Vignalparco Chianti Classico Riserva Casa Emma Toscana Italy 2020</span>
+                <span class="wl-details">CASA EMMA,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">8500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-gramolere-manzone-piemonte-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Barolo Gramolere Manzone Piemonte Italy 2019</span>
+                <span class="wl-details">MANZONE,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">10300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/brunello-di-montalcino-p.-56-tenuta-buon-tempo-toscana-italy-2012.html"  class="wl-info">
+                <span class="wl-name">Brunello di Montalcino p. 56 Tenuta Buon Tempo Toscana Italy 2012</span>
+                <span class="wl-details">TENUTA BUON TEMPO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">12700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barbaresco-serraboella-paitin-piemonte-italy-2017.html"  class="wl-info">
+                <span class="wl-name">Barbaresco Serraboella Paitin Piemonte Italy 2017</span>
+                <span class="wl-details">PAITIN,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">13900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/brunello-di-montalcino-casanova-di-neri-toscana-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Brunello di Montalcino Casanova di Neri Toscana Italy 2019</span>
+                <span class="wl-details">CASANOVA DI NERI,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">14600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-la-tartufaia-giulia-negri-piemonte-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Barolo La Tartufaia Giulia Negri Piemonte Italy 2020</span>
+                <span class="wl-details">GIULIA NEGRI,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">15400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-bussia-barale-fratelli-piemonte-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Barolo Bussia Barale Fratelli Piemonte Italy 2019</span>
+                <span class="wl-details">BARALE FRATELLI,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">15800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ghemme-collis-breclemae-antichi-vigneti-di-cantalupo-piemonte-italy-2013.html"  class="wl-info">
+                <span class="wl-name">Ghemme Collis Breclemae Antichi Vigneti di Cantalupo Piemonte Italy 2013</span>
+                <span class="wl-details">ANTICHI VIGNETI DI CANTALUPO,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">16900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/punta-di-adine-toscana-italy-2017.html"  class="wl-info">
+                <span class="wl-name">Punta Di Adine Toscana Italy 2017</span>
+                <span class="wl-details">PUNTA DI ADINE,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">16700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/brunello-di-montalcino-p.-56-tenuta-buon-tempo-toscana-italy-2018.html"  class="wl-info">
+                <span class="wl-name">Brunello di Montalcino p. 56 Tenuta Buon Tempo Toscana Italy 2018</span>
+                <span class="wl-details">TENUTA BUON TEMPO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">15900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-bussia-barale-fratelli-piemonte-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Barolo Bussia Barale Fratelli Piemonte Italy 2020</span>
+                <span class="wl-details">BARALE FRATELLI,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">15700 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">CHARDONNAY, PINOT BLANC &amp; PINOT GRIS &amp; Co. <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BURGUNDIAN VARIETIES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/morillon-gamlitz-sattlerhof-sudsteiermark-austria-2021.html"  class="wl-info">
+                <span class="wl-name">Morillon Gamlitz Sattlerhof SudSteiermark Austria 2021</span>
+                <span class="wl-details">SATTLERHOF,Südsteiermark, Austria</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-santa-gemma-puglia-italy-2022.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Santa Gemma Puglia Italy 2022</span>
+                <span class="wl-details">SANTA GEMMA,Puglia, Italy</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/now-chardonnay-paxton-mclaren-vale-australia-2021.html"  class="wl-info">
+                <span class="wl-name">Now Chardonnay Paxton McLaren Vale Australia 2021</span>
+                <span class="wl-details">PAXTON,McLaren Vale, Australia</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grauburgunder-dreissigacker-rheinhessen-germany-2021.html"  class="wl-info">
+                <span class="wl-name">Grauburgunder Dreissigacker Rheinhessen Germany 2021</span>
+                <span class="wl-details">DREISSIGACKER,Rheinhessen, Germany</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-blanc-eichelberg-weingut-heitlinger-baden-germany-2018.html"  class="wl-info">
+                <span class="wl-name">Pinot Blanc Eichelberg Weingut Heitlinger Baden Germany 2018</span>
+                <span class="wl-details">WEINGUT HEITLINGER,Baden, Germany</span>
+            </a>
+            <div class="wl-price">6500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bad-boy-chardonnay-vin-de-bordeaux-france-2022.html"  class="wl-info">
+                <span class="wl-name">Bad Boy Chardonnay Vin de Bordeaux France 2022</span>
+                <span class="wl-details">BAD BOY,Bordeaux, France</span>
+            </a>
+            <div class="wl-price">6600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/aligote-les-astrelles-aoc-les-lares-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Aligote Les Astrelles AOC Les Lares Bourgogne France 2022</span>
+                <span class="wl-details">LES LARES,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chablis-domaine-louis-moreau-bourgogne-france-2023.html"  class="wl-info">
+                <span class="wl-name">Chablis Domaine Louis Moreau Bourgogne France 2023</span>
+                <span class="wl-details">DOMAINE LOUIS MOREAU,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-grigio-lis-neris-friuli-isonzo-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Pinot Grigio Lis Neris Friuli Isonzo Italy 2023</span>
+                <span class="wl-details">LIS NERIS,Friuli, Italy</span>
+            </a>
+            <div class="wl-price">6900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/montany-les-vignes-derriere-1er-cru-domaine-stephane-aladame-bourgogne-france-2017.html"  class="wl-info">
+                <span class="wl-name">Montany Les Vignes Derriere 1er Cru Domaine Stephane Aladame Bourgogne France 2017</span>
+                <span class="wl-details">DOMAINE STEPHANE ALADAME,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">7200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/g-lot-chardonnay-luca-winery-tupungato-mendoza-argentina-2022.html"  class="wl-info">
+                <span class="wl-name">G Lot Chardonnay Luca Winery Tupungato Mendoza Argentina 2022</span>
+                <span class="wl-details">LUCA WINERY,Mendoza, Argentina</span>
+            </a>
+            <div class="wl-price">7200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-lis-neris-friuli-isonzo-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Lis Neris Friuli Isonzo Italy 2023</span>
+                <span class="wl-details">LIS NERIS,Friuli, Italy</span>
+            </a>
+            <div class="wl-price">7500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/macon-verze-domaine-de-la-belouse-bourgogne-france-2023.html"  class="wl-info">
+                <span class="wl-name">Macon-Verze Domaine de La Belouse Bourgogne France 2023</span>
+                <span class="wl-details">DOMAINE DE LA BELOUSE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">7600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/arbois-chardonnay-domaine-rolet-jura-france-2023.html"  class="wl-info">
+                <span class="wl-name">Arbois Chardonnay Domaine Rolet Jura France 2023</span>
+                <span class="wl-details">DOMAINE ROLET,Jura, France</span>
+            </a>
+            <div class="wl-price">7900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/morillon-muschelkalk-sudsteiermark-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Morillon Muschelkalk SudSteiermark Austria 2022</span>
+                <span class="wl-details">SATTLERHOF,Südsteiermark, Austria</span>
+            </a>
+            <div class="wl-price">7900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/marsannay-saint-jacques-fougeray-de-beauclair-bourgogne-france-2018.html"  class="wl-info">
+                <span class="wl-name">Marsannay Saint-Jacques Fougeray de Beauclair Bourgogne France 2018</span>
+                <span class="wl-details">FOUGERAY DE BEAUCLAIR,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">9100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-bianco-sirmian-nals-margreid-sudtirol-alto-adige-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Pinot Bianco Sirmian Nals-Margreid Sudtirol Alto Adige Italy 2020</span>
+                <span class="wl-details">NALS-MARGREID,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">9400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/filippe-chavy-chardonnay-bourgogne-aoc-france-2022.html"  class="wl-info">
+                <span class="wl-name">Filippe Chavy Chardonnay Bourgogne AOC France 2022</span>
+                <span class="wl-details">DOMAINE J.-L. CHAVY,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sonnenberg-bonnigheim-chardonnay-1g-dautel-wurttemberg-germany-2023.html"  class="wl-info">
+                <span class="wl-name">Sonnenberg Bonnigheim Chardonnay 1G Dautel Wurttemberg Germany 2023</span>
+                <span class="wl-details">DAUTEL,Württemberg, Germany</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/lochle-gg-weissburgunder-weingut-burg-ravensburg-baden-germany-2018.html"  class="wl-info">
+                <span class="wl-name">Lochle GG Weissburgunder Weingut Burg Ravensburg Baden Germany 2018</span>
+                <span class="wl-details">BURG RAVENSBURG,Baden, Germany</span>
+            </a>
+            <div class="wl-price">9700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bouzeron-domaine-rois-mages-bourgogne-france-2023.html"  class="wl-info">
+                <span class="wl-name">Bouzeron Domaine Rois Mages Bourgogne France 2023</span>
+                <span class="wl-details">DOMAINE ROIS MAGES,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">11400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-domaine-agnes-paquet-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Domaine Agnes Paquet Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE AGNÈS PAQUET,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">12000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-grand-reserve-rossern-pfaffl-niederosterreich-austria-2021.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Grand Reserve Rossern Pfaffl Niederosterreich Austria 2021</span>
+                <span class="wl-details">PFÄFFL,Niederösterreich, Austria</span>
+            </a>
+            <div class="wl-price">12100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-crossbarn-sonoma-coast-napa-valley-usa-2020.html"  class="wl-info">
+                <span class="wl-name">Chardonnay CrossBarn Sonoma Coast Napa Valley USA 2020</span>
+                <span class="wl-details">CROSSBARN,Sonoma Coast, USA</span>
+            </a>
+            <div class="wl-price">12300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/macon-davaye-pierre-naigeon-bourgogne-france-2018.html"  class="wl-info">
+                <span class="wl-name">Macon-Davaye Pierre Naigeon Bourgogne France 2018</span>
+                <span class="wl-details">PIERRE NAIGEON,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">12400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bourgogne-le-clos-du-chateau-domaine-de-montille-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Bourgogne Le Clos du Chateau Domaine de Montille Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE DE MONTILLE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">12300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chablis-fourchaume-1er-cru-domaine-des-malandes-bourgogne-france-2023.html"  class="wl-info">
+                <span class="wl-name">Chablis Fourchaume 1er Cru Domaine des Malandes Bourgogne France 2023</span>
+                <span class="wl-details">DOMAINE DES MALANDES,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">14200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pouilly-fuisse-la-petite-parcelle-maison-auvigue-bourgogne-france-2021.html"  class="wl-info">
+                <span class="wl-name">Pouilly-Fuisse La Petite Parcelle Maison Auvigue Bourgogne France 2021</span>
+                <span class="wl-details">MAISON AUVIGUE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">14900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/saint-romain-maison-de-montille-bourgogne-france-2022.html"  class="wl-info">
+                <span class="wl-name">Saint-Romain Maison de Montille Bourgogne France 2022</span>
+                <span class="wl-details">DOMAINE DE MONTILLE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">15500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chassagne-montrachet-en-pimont-au-pied-du-mont-chauve-bourgogne-france-2020.html"  class="wl-info">
+                <span class="wl-name">Chassagne-Montrachet En Pimont Au Pied du Mont Chauve Bourgogne France 2020</span>
+                <span class="wl-details">AU PIED DU MONT CHAUVE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">17500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chablis-vaudesir-grand-cru-domaine-louis-moreau-2018.html"  class="wl-info">
+                <span class="wl-name">Chablis Vaudesir Grand Cru Domaine Louis Moreau 2018</span>
+                <span class="wl-details">DOMAINE LOUIS MOREAU,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">19700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/auxey-duresses-blanc-cuvee-patience-№14-domaine-agnes-paquet-bourgogne-2021.html"  class="wl-info">
+                <span class="wl-name">Auxey-Duresses Blanc Cuvee Patience №14 Domaine Agnes Paquet Bourgogne 2021</span>
+                <span class="wl-details">DOMAINE AGNÈS PAQUET,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">20200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chassagne-montrachet-1er-cru-les-blanchots-dessous-coffinet-duvernay-2018.html"  class="wl-info">
+                <span class="wl-name">Chassagne-Montrachet 1er Cru Les Blanchots Dessous Coffinet-Duvernay 2018</span>
+                <span class="wl-details">COFFINET-DUVERNAY,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">20700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/puligny-montrachet-1er-cru-les-folatieres-domaine-j.-l.-chavy-bourgogne-france-2019-22.html"  class="wl-info">
+                <span class="wl-name">Puligny-Montrachet 1er Cru Les Folatieres Domaine J.-L. Chavy Bourgogne France 2019/22</span>
+                <span class="wl-details">DOMAINE J.-L. CHAVY,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">23200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/batar-querciabella-toscana-italy-2022.html"  class="wl-info">
+                <span class="wl-name">Batar Querciabella Toscana Italy 2022</span>
+                <span class="wl-details">QUERCIABELLA,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">26100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/meursault-genevrieres-1er-cru-hospices-de-beaune-morey-blanc,-cuvee-b-2016.html"  class="wl-info">
+                <span class="wl-name">Meursault-Genevrieres 1er Cru Hospices de Beaune Morey-Blanc, Cuvee B 2016</span>
+                <span class="wl-details">HOSPICES DE BEAUNE,Bourgogne, France</span>
+            </a>
+            <div class="wl-price">43000 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">CABERNET, MERLOT, PETIT VERDOT &amp; Co. <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BORDEAUX VARIETIES &amp; BLENDS</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-beaulieu-comtes-de-tastes-superieur-bergerac-france-2019.html"  class="wl-info">
+                <span class="wl-name">Chateau Beaulieu Comtes de Tastes Superieur Bergerac France 2019</span>
+                <span class="wl-details">CHÂTEAU BEAULIEU,Bergerac, France</span>
+            </a>
+            <div class="wl-price">4400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-le-raz-cuvee-grand-chene-rouge-bergerac-france-2014.html"  class="wl-info">
+                <span class="wl-name">Chateau Le Raz Cuvee Grand Chene Rouge Bergerac France 2014</span>
+                <span class="wl-details">CHÂTEAU LE RAZ,Bergerac, France</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-tour-saint-bonnet-medoc-france-2015.html"  class="wl-info">
+                <span class="wl-name">Chateau Tour Saint Bonnet Medoc France 2015</span>
+                <span class="wl-details">CHÂTEAU TOUR SAINT BONNET,Médoc, France</span>
+            </a>
+            <div class="wl-price">5200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-laroche-bel-air-cotes-de-bordeaux-france-2010.html"  class="wl-info">
+                <span class="wl-name">Chateau Laroche Bel Air Cotes de Bordeaux France 2010</span>
+                <span class="wl-details">CHÂTEAU LAROCHE BEL AIR,Côtes de Bordeaux, France</span>
+            </a>
+            <div class="wl-price">5500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-grand-village-bordeaux-france-2020.html"  class="wl-info">
+                <span class="wl-name">Chateau Grand Village Bordeaux France 2020</span>
+                <span class="wl-details">CHÂTEAU GRAND VILLAGE,Bordeaux, France</span>
+            </a>
+            <div class="wl-price">6100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-bernadotte-haut-medoc-france-2014.html"  class="wl-info">
+                <span class="wl-name">Chateau Bernadotte Haut-Medoc France 2014</span>
+                <span class="wl-details">CHÂTEAU BERNADOTTE,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">6600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/fihl-merlot-peter-dipoli-alto-adige-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Fihl Merlot Peter Dipoli Alto Adige Italy 2019</span>
+                <span class="wl-details">PETER DIPOLI,Alto Adige, Italy</span>
+            </a>
+            <div class="wl-price">7900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-citran-haut-medoc-france-2014.html"  class="wl-info">
+                <span class="wl-name">Chateau Citran Haut-Medoc France 2014</span>
+                <span class="wl-details">CHÂTEAU CITRAN,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">8200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cabernet-sauvignon-lis-neris-friuli-isonzo-italy-2018.html"  class="wl-info">
+                <span class="wl-name">Cabernet Sauvignon Lis Neris Friuli Isonzo Italy 2018</span>
+                <span class="wl-details">LIS NERIS,Friuli, Italy</span>
+            </a>
+            <div class="wl-price">8900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cask-selection-cavas-de-weinert-bodegas-weinert-mendoza-argentina-2011.html"  class="wl-info">
+                <span class="wl-name">Cask Selection Cavas de Weinert Bodegas Weinert Mendoza Argentina 2011</span>
+                <span class="wl-details">BODEGAS WEINERT,Mendoza, Argentina</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-poujeaux-moulis-en-medoc-france-2012.html"  class="wl-info">
+                <span class="wl-name">Chateau Poujeaux Moulis-en-Medoc France 2012</span>
+                <span class="wl-details">CHÂTEAU POUJEAUX,Moulis-en-Médoc, France</span>
+            </a>
+            <div class="wl-price">11000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/turpino-querciabella-toscana-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Turpino Querciabella Toscana Italy 2019</span>
+                <span class="wl-details">QUERCIABELLA,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">11100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-cos-labory-saint-estephe-france-2014.html"  class="wl-info">
+                <span class="wl-name">Chateau Cos Labory Saint-Estephe France 2014</span>
+                <span class="wl-details">CHÂTEAU COS LABORY,Saint-Estèphe, France</span>
+            </a>
+            <div class="wl-price">11500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/la-dame-de-malescot-st.exupery-grand-cru-classe-margaux-france-2017.html"  class="wl-info">
+                <span class="wl-name">La Dame de Malescot St.Exupery Grand Cru Classe Margaux France 2017</span>
+                <span class="wl-details">CHÂTEAU MALESCOT SAINT-EXUPÉRY,Margaux, France</span>
+            </a>
+            <div class="wl-price">15200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/geremia-rocca-di-montegrossi-toscana-italy-2018.html"  class="wl-info">
+                <span class="wl-name">Geremia Rocca Di Montegrossi Toscana Italy 2018</span>
+                <span class="wl-details">ROCCA DI MONTEGROSSI,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">13400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cabernet-sauvignon-crossbarn-paul-hobbs-napa-valley-usa-2018.html"  class="wl-info">
+                <span class="wl-name">Cabernet Sauvignon CrossBarn Paul Hobbs Napa Valley USA 2018</span>
+                <span class="wl-details">PAUL HOBBS,Napa Valley, USA</span>
+            </a>
+            <div class="wl-price">15900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-la-lagune-grand-cru-classe-haut-medoc-france-2017.html"  class="wl-info">
+                <span class="wl-name">Chateau La Lagune Grand Cru Classe Haut-Medoc France 2017</span>
+                <span class="wl-details">CHÂTEAU LA LAGUNE,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">14900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-sociando-mallet-haut-medoc-france-2006.html"  class="wl-info">
+                <span class="wl-name">Chateau Sociando-Mallet Haut-Medoc France 2006</span>
+                <span class="wl-details">CHÂTEAU SOCIANDO-MALLET,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">16300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-gombaude-guillot-pomerol-france-2014.html"  class="wl-info">
+                <span class="wl-name">Chateau Gombaude Guillot Pomerol France 2014</span>
+                <span class="wl-details">CHÂTEAU GOMBAUDE GUILLOT,Pomerol, France</span>
+            </a>
+            <div class="wl-price">18500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-darmailhac-pauillac-grand-cru-classe-france-2016.html"  class="wl-info">
+                <span class="wl-name">Chateau d&#x27;Armailhac Pauillac Grand Cru Classe France 2016</span>
+                <span class="wl-details">CHÂTEAU D&#x27;ARMAILHAC,Pauillac, France</span>
+            </a>
+            <div class="wl-price">19300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-corbin-st-emilion-grand-cru-classe-france-2005.html"  class="wl-info">
+                <span class="wl-name">Chateau Corbin St-Emilion Grand Cru Classe France 2005</span>
+                <span class="wl-details">CHÂTEAU CORBIN,Saint-Émilion, France</span>
+            </a>
+            <div class="wl-price">21500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bertinga-toscana-italy-2017.html"  class="wl-info">
+                <span class="wl-name">Bertinga Toscana Italy 2017</span>
+                <span class="wl-details">BERTINGA,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">22400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-saint-pierre-grand-cru-classe-saint-julien-france-1996.html"  class="wl-info">
+                <span class="wl-name">Chateau Saint-Pierre Grand Cru Classe Saint-Julien France 1996</span>
+                <span class="wl-details">CHÂTEAU SAINT-PIERRE,Saint-Julien, France</span>
+            </a>
+            <div class="wl-price">23500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-lafon-rochet-grand-cru-classe-saint-estephe-france-2000.html"  class="wl-info">
+                <span class="wl-name">Chateau Lafon-Rochet Grand Cru Classe Saint-Estephe France 2000</span>
+                <span class="wl-details">CHÂTEAU LAFON-ROCHET,Saint-Estèphe, France</span>
+            </a>
+            <div class="wl-price">24600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-talbot-saint-julien-grand-cru-classe-france-2015.html"  class="wl-info">
+                <span class="wl-name">Chateau Talbot Saint-Julien Grand Cru Classe France 2015</span>
+                <span class="wl-details">CHÂTEAU TALBOT,Saint-Julien, France</span>
+            </a>
+            <div class="wl-price">24800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/clos-du-marquis-saint-julien-france-1995.html"  class="wl-info">
+                <span class="wl-name">Clos du Marquis Saint-Julien France 1995</span>
+                <span class="wl-details">CLOS DU MARQUIS,Saint-Julien, France</span>
+            </a>
+            <div class="wl-price">26000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-sociando-mallet-haut-medoc-france-1995.html"  class="wl-info">
+                <span class="wl-name">Chateau Sociando-Mallet Haut-Medoc France 1995</span>
+                <span class="wl-details">CHÂTEAU SOCIANDO-MALLET,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">26100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-ferriere-margaux-france-2005.html"  class="wl-info">
+                <span class="wl-name">Chateau Ferriere Margaux France 2005</span>
+                <span class="wl-details">CHÂTEAU FERRIÈRE,Margaux, France</span>
+            </a>
+            <div class="wl-price">26800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-kirvan-grand-cru-classe-margaux-france-2000.html"  class="wl-info">
+                <span class="wl-name">Chateau Kirvan Grand Cru Classe Margaux France 2000</span>
+                <span class="wl-details">CHÂTEAU KIRWAN,Margaux, France</span>
+            </a>
+            <div class="wl-price">29500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-gruaud-larose-grand-cru-classe-saint-julien-france-1994.html"  class="wl-info">
+                <span class="wl-name">Chateau Gruaud Larose Grand Cru Classe Saint-Julien France 1994</span>
+                <span class="wl-details">CHÂTEAU GRUAUD LAROSE,Saint-Julien, France</span>
+            </a>
+            <div class="wl-price">30000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-cos-destournel-rouge-saint-estephe-grand-cru-classe-france-2006.html"  class="wl-info">
+                <span class="wl-name">Chateau Cos d&#x27;Estournel Rouge Saint-Estephe Grand Cru Classe France 2006</span>
+                <span class="wl-details">CHÂTEAU COS D&#x27;ESTOURNEL,Saint-Estèphe, France</span>
+            </a>
+            <div class="wl-price">50600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-du-retout-cru-bourgeois-haut-medoc-france-2016.html"  class="wl-info">
+                <span class="wl-name">Chateau du Retout Cru Bourgeois Haut-Medoc France 2016</span>
+                <span class="wl-details">CHÂTEAU DU RETOUT,Haut-Médoc, France</span>
+            </a>
+            <div class="wl-price">6700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-potensac-cru-bourgeois-medoc-france-2008.html"  class="wl-info">
+                <span class="wl-name">Chateau Potensac Cru Bourgeois Medoc France 2008</span>
+                <span class="wl-details">CHÂTEAU POTENSAC,Médoc, France</span>
+            </a>
+            <div class="wl-price">12400 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">AMBER &amp; LOW INTERVENTION <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BUBBLES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ancestrale-vensame-bio-tenuta-santa-lucia-emilia-romagna-italia-2019.html"  class="wl-info">
+                <span class="wl-name">Ancestrale Vensame Bio Tenuta Santa Lucia Emilia-Romagna Italia 2019</span>
+                <span class="wl-details">TENUTA SANTA LUCIA,Emilia-Romagna, Italy</span>
+            </a>
+            <div class="wl-price">4200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pet-nat-puro-rosato-lavacchio-toscana-italia-2021.html"  class="wl-info">
+                <span class="wl-name">Pet-nat Puro Rosato Lavacchio Toscana Italia 2021</span>
+                <span class="wl-details">LAVACCHIO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">4900 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">RUSSIAN WINE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">BUBBLES</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/red-brut-nature-usadba-perovskih-sevastopol-2022.html"  class="wl-info">
+                <span class="wl-name">Red Brut Nature Usadba Perovskih Sevastopol 2022</span>
+                <span class="wl-details">USADBA PEROVSKIH,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">4100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/temelion-brut-rose-kuban-krimsk-2019.html"  class="wl-info">
+                <span class="wl-name">Temelion Brut Rose Kuban Krimsk 2019</span>
+                <span class="wl-details">TEMELION,Kuban, Krimsk</span>
+            </a>
+            <div class="wl-price">7800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/usadba-divnomorskoe-brut-grande-cuvee-gelendzhik-2021.html"  class="wl-info">
+                <span class="wl-name">Usadba Divnomorskoe Brut Grande Cuvee Gelendzhik 2021</span>
+                <span class="wl-details">USADBA DIVNOMORSKOE,Gelendzhik, Crimea</span>
+            </a>
+            <div class="wl-price">8500 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">WHITE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/déjà-vu-riesling-lefkadia-valley-2021.html"  class="wl-info">
+                <span class="wl-name">Déjà Vu Riesling Lefkadia Valley 2021</span>
+                <span class="wl-details">LEFKADIA VALLEY,Kuban, Russia</span>
+            </a>
+            <div class="wl-price">3600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/esse-unplugged-rkatsiteli-orange-satera-crimea-2023.html"  class="wl-info">
+                <span class="wl-name">ESSE Unplugged Rkatsiteli Orange Satera Crimea 2023</span>
+                <span class="wl-details">ESSE SATERA,Crimea</span>
+            </a>
+            <div class="wl-price">3600 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/katya-viognier-belmas-sevastopol-2022.html"  class="wl-info">
+                <span class="wl-name">Katya Viognier Belmas Sevastopol 2022</span>
+                <span class="wl-details">BELMAS,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">3900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/muscat-rem-akchurin-sevastopol-2021.html"  class="wl-info">
+                <span class="wl-name">Muscat Rem Akchurin Sevastopol 2021</span>
+                <span class="wl-details">REM AKCHURIN,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">4100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chardonnay-rem-akchurin-sevastopol-2021.html"  class="wl-info">
+                <span class="wl-name">Chardonnay Rem Akchurin Sevastopol 2021</span>
+                <span class="wl-details">REM AKCHURIN,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">4100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-belmas-sevastopol-2024.html"  class="wl-info">
+                <span class="wl-name">Riesling Belmas Sevastopol 2024</span>
+                <span class="wl-details">BELMAS,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">4800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/kokur-orange-usadba-perovskih-sevastopol-2022.html"  class="wl-info">
+                <span class="wl-name">Kokur Orange Usadba Perovskih Sevastopol 2022</span>
+                <span class="wl-details">USADBA PEROVSKIH,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">5100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cosmos-orange-yaiyla-urban-winery-sevastopol-2021.html"  class="wl-info">
+                <span class="wl-name">Cosmos Orange Yaiyla Urban Winery Sevastopol 2021</span>
+                <span class="wl-details">YAIYLA URBAN WINERY,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">5300 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">RED</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-noir-sikory-kuban-semigorye-2023.html"  class="wl-info">
+                <span class="wl-name">Pinot Noir Sikory Kuban Semigorye 2023</span>
+                <span class="wl-details">SIKORY,Kuban, Semigorye</span>
+            </a>
+            <div class="wl-price">4200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/mourvedre-red-klen-de-gai-kodzor-kuban-anapa-2020.html"  class="wl-info">
+                <span class="wl-name">Mourvedre Red Klen de Gai-Kodzor Kuban Anapa 2020</span>
+                <span class="wl-details">KLEN DE GAI-KODZOR,Kuban, Anapa</span>
+            </a>
+            <div class="wl-price">4500 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/44-parallel-usadba-perovskih-sevastopol-2022.html"  class="wl-info">
+                <span class="wl-name">44 Parallel Usadba Perovskih Sevastopol 2022</span>
+                <span class="wl-details">USADBA PEROVSKIH,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">5100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cosmos-pinot-noir-yaiyla-urban-winery-sevastopol-2020.html"  class="wl-info">
+                <span class="wl-name">Cosmos Pinot Noir Yaiyla Urban Winery Sevastopol 2020</span>
+                <span class="wl-details">YAIYLA URBAN WINERY,Sevastopol, Crimea</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/pinot-noir-krasnaia-gorka-galitskiy-&amp;-galitskiy-kuban-anapa-2022.html"  class="wl-info">
+                <span class="wl-name">Pinot Noir Krasnaia Gorka Galitskiy &amp; Galitskiy Kuban Anapa 2022</span>
+                <span class="wl-details">GALITSKIY &amp; GALITSKIY,Kuban, Anapa</span>
+            </a>
+            <div class="wl-price">5900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/colline-krinica-kuban-gelendzhik-2021.html"  class="wl-info">
+                <span class="wl-name">Colline Krinica Kuban Gelendzhik 2021</span>
+                <span class="wl-details">KRINICA,Kuban, Gelendzhik</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cosaque-krasnaia-gorka-galitskiy-&amp;-galitskiy-kuban-anapa-2022.html"  class="wl-info">
+                <span class="wl-name">Cosaque Krasnaia Gorka Galitskiy &amp; Galitskiy Kuban Anapa 2022</span>
+                <span class="wl-details">GALITSKIY &amp; GALITSKIY,Kuban, Anapa</span>
+            </a>
+            <div class="wl-price">7800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/krasnostop-na-terracah-sikory-kuban-semigorye-2019.html"  class="wl-info">
+                <span class="wl-name">Krasnostop Na Terracah Sikory Kuban Semigorye 2019</span>
+                <span class="wl-details">SIKORY,Kuban, Semigorye</span>
+            </a>
+            <div class="wl-price">10900 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">SPANISH WINE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">SWEET WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/apasionado-de-jose-pariente-rueda-spain-2021.html"  class="wl-info">
+                <span class="wl-name">Apasionado de Jose Pariente Rueda Spain 2021</span>
+                <span class="wl-details">JOSÉ PARIENTE,Rueda, Spain</span>
+            </a>
+            <div class="wl-price">6300 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">AUSTRIAN WINE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">SWEET WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/ba-t-beerenauslese-tement-sudsteiermark-austria-2017.html"  class="wl-info">
+                <span class="wl-name">BA T Beerenauslese Tement SudSteiermark Austria 2017</span>
+                <span class="wl-details">TEMENT,Südsteiermark, Austria</span>
+            </a>
+            <div class="wl-price">6800 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">GERMAN WINE <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">NO ALCOHOL</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/von-buhl-zero-secco-pfalz-germany-2025.html"  class="wl-info">
+                <span class="wl-name">Von Buhl Zero Secco Pfalz Germany 2025</span>
+                <span class="wl-details">VON BUHL,Pfalz, Germany</span>
+            </a>
+            <div class="wl-price">3900 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">BABY BOTTLES <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">GERMAN WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/riesling-bone-dry-germany-2023.html"  class="wl-info">
+                <span class="wl-name">Riesling Bone Dry Germany 2023</span>
+                <span class="wl-details">GERMAN SELECTION,Germany</span>
+            </a>
+            <div class="wl-price">2700 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">AUSTRIAN WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/loimer-pinot-noir-kamptal-austria-2022.html"  class="wl-info">
+                <span class="wl-name">Loimer Pinot Noir Kamptal Austria 2022</span>
+                <span class="wl-details">LOIMER,Kamptal, Austria</span>
+            </a>
+            <div class="wl-price">3500 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">FRENCH WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/les-romains-sancerre-loire-france-2022.html"  class="wl-info">
+                <span class="wl-name">Les Romains Sancerre Loire France 2022</span>
+                <span class="wl-details">LES ROMAINS,Loire, France</span>
+            </a>
+            <div class="wl-price">4200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateauneuf-du-pape-domaine-chante-cigale-rhone-france-2023.html"  class="wl-info">
+                <span class="wl-name">Chateauneuf-Du-Pape Domaine Chante Cigale Rhone France 2023</span>
+                <span class="wl-details">DOMAINE CHANTE CIGALE,Rhône, France</span>
+            </a>
+            <div class="wl-price">4500 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">SPANISH WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/vina-tondonia-reserva-lopez-de-heredia-rioja-spain-2012.html"  class="wl-info">
+                <span class="wl-name">Vina Tondonia Reserva Lopez de Heredia Rioja Spain 2012</span>
+                <span class="wl-details">LOPEZ DE HEREDIA,Rioja, Spain</span>
+            </a>
+            <div class="wl-price">7300 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">ITALIAN WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-docg-casa-fondata-piemonte-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Barolo DOCG Casa Fondata Piemonte Italy 2020</span>
+                <span class="wl-details">CASA FONDATA,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">8800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/la-marega-amarone-della-valpolicella-docg-classico-veneto-italy-2018.html"  class="wl-info">
+                <span class="wl-name">La Marega Amarone della Valpolicella DOCG Classico Veneto Italy 2018</span>
+                <span class="wl-details">LA MAREGA,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">9800 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">FRENCH WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/champagne-le-murgiers-extra-brut-france-2019.html"  class="wl-info">
+                <span class="wl-name">Champagne Le Murgiers Extra Brut France 2019</span>
+                <span class="wl-details">LE MURGIERS,Champagne, France</span>
+            </a>
+            <div class="wl-price">9900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/champagne-bruno-paillard-premiere-cuvee-extra-brut-france-2020.html"  class="wl-info">
+                <span class="wl-name">Champagne Bruno Paillard Premiere Cuvee Extra Brut France 2020</span>
+                <span class="wl-details">BRUNO PAILLARD,Champagne, France</span>
+            </a>
+            <div class="wl-price">11000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chateau-brane-cantenac-2-grand-cru-classe-margaux-france-2004.html"  class="wl-info">
+                <span class="wl-name">Chateau Brane-Cantenac 2 Grand Cru Classe Margaux France 2004</span>
+                <span class="wl-details">CHÂTEAU BRANE-CANTENAC,Margaux, France</span>
+            </a>
+            <div class="wl-price">13800 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">BIG VOLUME BOTTLES <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">ITALIAN WINE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/origine-brut-valdo-veneto-italy-2023.html"  class="wl-info">
+                <span class="wl-name">Origine Brut Valdo Veneto Italy 2023</span>
+                <span class="wl-details">VALDO,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">8700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/prosecco-di-valdobbiadene-superiore-marca-oro-valdo-brut-veneto-italy-2021.html"  class="wl-info">
+                <span class="wl-name">Prosecco di Valdobbiadene Superiore Marca Oro Valdo Brut Veneto Italy 2021</span>
+                <span class="wl-details">VALDO,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">12300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/prosecco-di-valdobbiadene-superiore-marca-oro-valdo-brut-veneto-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Prosecco di Valdobbiadene Superiore Marca Oro Valdo Brut Veneto Italy 2020</span>
+                <span class="wl-details">VALDO,Veneto, Italy</span>
+            </a>
+            <div class="wl-price">21000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/centuno-nero-davola-canicatti-sicilia-italy-2019.html"  class="wl-info">
+                <span class="wl-name">Centuno Nero d&#x27;Avola Canicatti Sicilia Italy 2019</span>
+                <span class="wl-details">CENTUNO,Sicily, Italy</span>
+            </a>
+            <div class="wl-price">9900 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gorgoli-terre-del-bruno-toscana-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Gorgoli Terre del Bruno Toscana Italy 2020</span>
+                <span class="wl-details">TERRE DEL BRUNO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">13200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/chianti-riserva-poggio-al-falchi-toscana-italy-2020.html"  class="wl-info">
+                <span class="wl-name">Chianti Riserva Poggio al Falchi Toscana Italy 2020</span>
+                <span class="wl-details">POGGIO AL FALCHI,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">11200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/brunello-di-montalcino-tenuta-buon-tempo-toscana-italy-2018.html"  class="wl-info">
+                <span class="wl-name">Brunello di Montalcino Tenuta Buon Tempo Toscana Italy 2018</span>
+                <span class="wl-details">TENUTA BUON TEMPO,Toscana, Italy</span>
+            </a>
+            <div class="wl-price">25000 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-acclivi-comm-g-b-burlotto-piemonte-italy-2017.html"  class="wl-info">
+                <span class="wl-name">Barolo Acclivi Comm G B Burlotto Piemonte Italy 2017</span>
+                <span class="wl-details">COMM. G.B. BURLOTTO,Piemonte, Italy</span>
+            </a>
+            <div class="wl-price">35000 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title"> DIGESTIVES  <hr class="hr-shelf"></div>
+        <div class="wl-subsection-title">PORTO</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-royal-oporto-ruby-50ml.html"  class="wl-info">
+                <span class="wl-name">Porto Royal Oporto Ruby  50 ml</span>
+                <span class="wl-details">Porto Royal Oporto Ruby  </span>
+            </a>
+            <div class="wl-price">450 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-royal-oporto-tawny-50ml.html"  class="wl-info">
+                <span class="wl-name">Porto Royal Oporto Tawny  50 ml</span>
+                <span class="wl-details">Porto Royal Oporto Tawny  </span>
+            </a>
+            <div class="wl-price">450 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-calem-fine-white-50ml.html"  class="wl-info">
+                <span class="wl-name">Porto Calem Fine White   50 ml</span>
+                <span class="wl-details">Porto Calem Fine White   </span>
+            </a>
+            <div class="wl-price">450 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-royal-oporto-late-bottled-vintage-50ml.html"  class="wl-info">
+                <span class="wl-name">Porto Royal Oporto Late Bottled Vintage  50 ml</span>
+                <span class="wl-details">Porto Royal Oporto Late Bottled Vintage  </span>
+            </a>
+            <div class="wl-price">550 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-royal-oporto-colheita-2004-50ml.html"  class="wl-info">
+                <span class="wl-name">Porto Royal Oporto Colheita 2004  50 ml</span>
+                <span class="wl-details">Porto Royal Oporto Colheita 2004  </span>
+            </a>
+            <div class="wl-price">1300 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">MADEIRA</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/madeira-malmsey-10-years-old-cossart-gordon-50ml.html"  class="wl-info">
+                <span class="wl-name">Madeira Malmsey 10 Years Old Cossart Gordon  50 ml</span>
+                <span class="wl-details">Madeira Malmsey 10 Years Old Cossart Gordon  </span>
+            </a>
+            <div class="wl-price">930 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/madeira-full-rich-good-company-cossart-gordon-50ml.html"  class="wl-info">
+                <span class="wl-name">Madeira Full Rich Good Company Cossart Gordon  50 ml</span>
+                <span class="wl-details">Madeira Full Rich Good Company Cossart Gordon  </span>
+            </a>
+            <div class="wl-price">390 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">BAROLO CHINATO</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/barolo-chinato-50ml.html"  class="wl-info">
+                <span class="wl-name">Barolo Chinato  50 ml</span>
+                <span class="wl-details">Barolo Chinato  </span>
+            </a>
+            <div class="wl-price">950 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">SHERRY</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-macarena-mansanilla-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Macarena Mansanilla  50 ml</span>
+                <span class="wl-details">Sherry Macarena Mansanilla  </span>
+            </a>
+            <div class="wl-price">310 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-oloroso-rio-viejo-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Oloroso Rio Viejo  50 ml</span>
+                <span class="wl-details">Sherry Oloroso Rio Viejo  </span>
+            </a>
+            <div class="wl-price">350 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-oloroso-seco-alfonso-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Oloroso Seco Alfonso  50 ml</span>
+                <span class="wl-details">Sherry Oloroso Seco Alfonso  </span>
+            </a>
+            <div class="wl-price">550 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-leonor-palo-cortado-12-yo-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Leonor Palo Cortado 12 YO  50 ml</span>
+                <span class="wl-details">Sherry Leonor Palo Cortado 12 YO  </span>
+            </a>
+            <div class="wl-price">550 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-valdespino-pedro-ximenez-el-candado-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Valdespino Pedro Ximenez El Candado  50 ml</span>
+                <span class="wl-details">Sherry Valdespino Pedro Ximenez El Candado  </span>
+            </a>
+            <div class="wl-price">560 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-valdespino-palo-cortado-vos-20-yo-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Valdespino Palo Cortado VOS 20 yo  50 ml</span>
+                <span class="wl-details">Sherry Valdespino Palo Cortado VOS 20 yo  </span>
+            </a>
+            <div class="wl-price">1400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/sherry-oloroso-cream-vors-matusalem-1989-50ml.html"  class="wl-info">
+                <span class="wl-name">Sherry Oloroso Cream Vors Matusalem 1989  50 ml</span>
+                <span class="wl-details">Sherry Oloroso Cream Vors Matusalem 1989  </span>
+            </a>
+            <div class="wl-price">1900 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">EISWEIN</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/eiswein-dulce-enero-de-altolandon-do-manchuela-75ml.html"  class="wl-info">
+                <span class="wl-name">Eiswein Dulce Enero de Altolandon DO Manchuela   75 ml</span>
+                <span class="wl-details">Eiswein Dulce Enero de Altolandon DO Manchuela   </span>
+            </a>
+            <div class="wl-price">840 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">ASZU</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/tokaji-aszu-6-puttonyos-grof-degenfeld-hungary-75ml.html"  class="wl-info">
+                <span class="wl-name">Tokaji Aszu 6 Puttonyos Grof Degenfeld Hungary  75 ml</span>
+                <span class="wl-details">Tokaji Aszu 6 Puttonyos Grof Degenfeld Hungary  </span>
+            </a>
+            <div class="wl-price">1650 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">GRAPPA</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grappa-vite-doro-classica/barrique-bepi-tosolini-50ml.html"  class="wl-info">
+                <span class="wl-name">Grappa Vite d&#x27;Oro Classica/Barrique Bepi Tosolini  50 ml</span>
+                <span class="wl-details">Grappa Vite d&#x27;Oro Classica/Barrique Bepi Tosolini  </span>
+            </a>
+            <div class="wl-price">650 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grappa-nonino-vendemmia-riserva-italy-50ml.html"  class="wl-info">
+                <span class="wl-name">Grappa Nonino Vendemmia Riserva Italy  50ml</span>
+                <span class="wl-details">Grappa Nonino Vendemmia Riserva Italy  </span>
+            </a>
+            <div class="wl-price">650 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grappa-nonino-riserva-5-antica-cuvee-italy-50ml.html"  class="wl-info">
+                <span class="wl-name">Grappa Nonino  Riserva 5 Y.O. Antica Cuvee Italy  50ml</span>
+                <span class="wl-details">Grappa Nonino  Riserva 5 Y.O. Antica Cuvee Italy  </span>
+            </a>
+            <div class="wl-price">860 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grappa-riserva-sherry-wood-finish-sibona-italy-50ml.html"  class="wl-info">
+                <span class="wl-name">Grappa Riserva Sherry Wood Finish Sibona Italy  50ml</span>
+                <span class="wl-details">Grappa Riserva Sherry Wood Finish Sibona Italy  </span>
+            </a>
+            <div class="wl-price">1200 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CALVADOS</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/calvados-daron-pays-dauge-fine-50ml.html"  class="wl-info">
+                <span class="wl-name">Calvados Daron Pays D&#x27;Auge Fine  50 ml</span>
+                <span class="wl-details">Calvados Daron Pays D&#x27;Auge Fine  </span>
+            </a>
+            <div class="wl-price">650 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/calvados-pays-dauge-pere-magloire-vsop-50ml.html"  class="wl-info">
+                <span class="wl-name">Calvados Pays D`Auge Pere Magloire VSOP  50 ml</span>
+                <span class="wl-details">Calvados Pays D`Auge Pere Magloire VSOP  </span>
+            </a>
+            <div class="wl-price">890 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/calvados-pays-dauge-pere-magloire-xo-50ml.html"  class="wl-info">
+                <span class="wl-name">Calvados Pays D`Auge Pere Magloire XO  50 ml</span>
+                <span class="wl-details">Calvados Pays D`Auge Pere Magloire XO  </span>
+            </a>
+            <div class="wl-price">1600 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">BRANDY</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/brandy-torres-15-reserva-privada-50ml.html"  class="wl-info">
+                <span class="wl-name">Brandy Torres 15 Reserva Privada  50ml</span>
+                <span class="wl-details">Brandy Torres 15 Reserva Privada  </span>
+            </a>
+            <div class="wl-price">580 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">COGNAC</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cognac-leyrat-vsop-50ml.html"  class="wl-info">
+                <span class="wl-name">Cognac Leyrat VSOP  50 ml</span>
+                <span class="wl-details">Cognac Leyrat VSOP  </span>
+            </a>
+            <div class="wl-price">1500 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">ARMAGNAC</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/blanche-darmagnac-aoc-domaine-desperance-50ml.html"  class="wl-info">
+                <span class="wl-name">Blanche d`Armagnac AOC Domane d`Esperance   50 ml</span>
+                <span class="wl-details">Blanche d`Armagnac AOC Domane d`Esperance   </span>
+            </a>
+            <div class="wl-price">950 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/bas-armagnac-de-pontiac-1973-50ml.html"  class="wl-info">
+                <span class="wl-name">Bas- Armagnac de Pontiac 1973  50 ml</span>
+                <span class="wl-details">Bas- Armagnac de Pontiac 1973  </span>
+            </a>
+            <div class="wl-price">2400 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/grand-armagnac-janneau-1972-50ml.html"  class="wl-info">
+                <span class="wl-name">Grand Armagnac Janneau 1972  50 ml</span>
+                <span class="wl-details">Grand Armagnac Janneau 1972  </span>
+            </a>
+            <div class="wl-price">2900 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">RUM</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/rum-diplomatico-botucal-venezuela-50ml.html"  class="wl-info">
+                <span class="wl-name">Rum Diplomatico Botucal Venezuela  50 ml</span>
+                <span class="wl-details">Rum Diplomatico Botucal Venezuela  </span>
+            </a>
+            <div class="wl-price">850 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">LIQUOR</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/esperance-floc-de-gascogne-50ml.html"  class="wl-info">
+                <span class="wl-name">Esperance Floc de Gascogne   50 ml</span>
+                <span class="wl-details">Esperance Floc de Gascogne   </span>
+            </a>
+            <div class="wl-price">470 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/mirto-di-sardegna-50ml.html"  class="wl-info">
+                <span class="wl-name">Mirto di Sardegna  50 ml</span>
+                <span class="wl-details">Mirto di Sardegna  </span>
+            </a>
+            <div class="wl-price">380 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/amaro-carciofo-sesibon-50ml.html"  class="wl-info">
+                <span class="wl-name">Amaro Carciofo Sesibon  50 ml</span>
+                <span class="wl-details">Amaro Carciofo Sesibon  </span>
+            </a>
+            <div class="wl-price">300 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/amaro-tosolini-50ml.html"  class="wl-info">
+                <span class="wl-name">Amaro Tosolini  50 ml</span>
+                <span class="wl-details">Amaro Tosolini  </span>
+            </a>
+            <div class="wl-price">670 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/fernet-vittone-50ml.html"  class="wl-info">
+                <span class="wl-name">Fernet Vittone  50 ml</span>
+                <span class="wl-details">Fernet Vittone  </span>
+            </a>
+            <div class="wl-price">320 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">WHISKY</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-bulleit-bourbon-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Bulleit Bourbon  50 ml</span>
+                <span class="wl-details">Whisky Bulleit Bourbon  </span>
+            </a>
+            <div class="wl-price">700 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-jack-daniels-tennessee-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Jack Daniel`s Tennessee   50 ml</span>
+                <span class="wl-details">Whisky Jack Daniel`s Tennessee   </span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-monkey-shoulder-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Monkey Shoulder  50 ml</span>
+                <span class="wl-details">Whisky Monkey Shoulder  </span>
+            </a>
+            <div class="wl-price">620 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-glenfiddich-12-single-malt-scotch-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Glenfiddich 12 y.o. Single Malt Scotch  50 ml</span>
+                <span class="wl-details">Whisky Glenfiddich 12 y.o. Single Malt Scotch  </span>
+            </a>
+            <div class="wl-price">1200 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-dalmore-port-wood-reserve-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Dalmore Port Wood Reserve  50 ml</span>
+                <span class="wl-details">Whisky Dalmore Port Wood Reserve  </span>
+            </a>
+            <div class="wl-price">2100 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-loch-lomond-12-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Loch Lomond 12 y.o.  50ml</span>
+                <span class="wl-details">Whisky Loch Lomond 12 y.o.  </span>
+            </a>
+            <div class="wl-price">850 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/whisky-macallan-double-cask-12-50ml.html"  class="wl-info">
+                <span class="wl-name">Whisky Macallan Double Cask 12 y.o.  50ml</span>
+                <span class="wl-details">Whisky Macallan Double Cask 12 y.o.  </span>
+            </a>
+            <div class="wl-price">1600 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">GIN</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gin-hendricks-amazonia-scotland-50ml.html"  class="wl-info">
+                <span class="wl-name">Gin Hendrick&#x27;s Amazonia Scotland  50 ml</span>
+                <span class="wl-details">Gin Hendrick&#x27;s Amazonia Scotland  </span>
+            </a>
+            <div class="wl-price">950 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/killepitsch-50ml.html"  class="wl-info">
+                <span class="wl-name">Killepitsch  50 ml</span>
+                <span class="wl-details">Killepitsch  </span>
+            </a>
+            <div class="wl-price">420 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/zakuro-umeshu-nara-prefecture-japan-90ml.html"  class="wl-info">
+                <span class="wl-name">Zakuro Umeshu Nara Prefecture Japan   90 ml</span>
+                <span class="wl-details">Zakuro Umeshu Nara Prefecture Japan   90 ml</span>
+            </a>
+            <div class="wl-price">850 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/yoi-umeko-okayama-japan-100ml.html"  class="wl-info">
+                <span class="wl-name">Yoi Umeko Okayama Japan  100 ml</span>
+                <span class="wl-details">Yoi Umeko Okayama Japan  100 ml</span>
+            </a>
+            <div class="wl-price">1300 ₽</div>
+        </div>
+
+        <div class="wl-subsection-title">CAKE</div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/cake-ikus-shiro-tottori-japan-125ml.html"  class="wl-info">
+                <span class="wl-name">Cake Iku`s Shiro Tottori Japan  125 ml</span>
+                <span class="wl-details">Cake Iku`s Shiro Tottori Japan  125 ml</span>
+            </a>
+            <div class="wl-price">2100 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">BOTTLED BEER <hr class="hr-shelf"></div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/belgian-style-tripel-330ml.html"  class="wl-info">
+                <span class="wl-name">Якорь Belgian Style Tripel Россия  330 ml</span>
+                <span class="wl-details">Якорь Belgian Style Tripel Россия  330 ml</span>
+            </a>
+            <div class="wl-price">550 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/la-trappe-dubbel-netherlands-330ml.html"  class="wl-info">
+                <span class="wl-name">La Trappe Dubbel Netherlands (7%)  330 ml</span>
+                <span class="wl-details">La Trappe Dubbel Netherlands (7%)  330 ml</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/steinbrau-pilsener-germany-500ml.html"  class="wl-info">
+                <span class="wl-name">Steinbrau Pilsener Germany  500 ml</span>
+                <span class="wl-details">Steinbrau Pilsener Germany  500 ml</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/weihenstephaner-hefeweissbier-germany-500ml.html"  class="wl-info">
+                <span class="wl-name">Weihenstephaner Hefeweissbier Germany  500 ml</span>
+                <span class="wl-details">Weihenstephaner Hefeweissbier Germany  500 ml</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/yash-330ml.html"  class="wl-info">
+                <span class="wl-name">Якорь. Светлое Шардоне Брют Россия     </span>
+                <span class="wl-details">Якорь. Светлое Шардоне Брют Россия     </span>
+            </a>
+            <div class="wl-price">1800 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/yar-330ml.html"  class="wl-info">
+                <span class="wl-name">Якорь. Светлое Рислинг Брют Россия     </span>
+                <span class="wl-details">Якорь. Светлое Рислинг Брют Россия     </span>
+            </a>
+            <div class="wl-price">1800 ₽</div>
+        </div>
+
+        <img src="https://img.totgoose.ru/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+        <div class="wl-section-title">COCKTAILS <hr class="hr-shelf"></div>
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/aperol-spritz-80ml.html"  class="wl-info">
+                <span class="wl-name">Aperol Spritz/Апероль Шприц  180ml</span>
+                <span class="wl-details">Aperol,Cava Brut Vibracions, содовая, апельсин, лёд  180ml</span>
+            </a>
+            <div class="wl-price">950 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/negroni-105ml.html"  class="wl-info">
+                <span class="wl-name">Negroni/Негрони   105ml</span>
+                <span class="wl-details">Campari,  Gin Edinburg, Vermut Corsieri del Palio Rosso, лёд  105ml</span>
+            </a>
+            <div class="wl-price">890 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/martini-dry-90ml.html"  class="wl-info">
+                <span class="wl-name">Martini Dry/Мартини Драй 90ml</span>
+                <span class="wl-details">Gin Edinburg, Vermut Martini Extra Dry, оливки, лёд  90ml</span>
+            </a>
+            <div class="wl-price">750 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/porto-tonic-180ml.html"  class="wl-info">
+                <span class="wl-name">Porto Tonic/ Порто Тоник  180ml</span>
+                <span class="wl-details">Porto Calem Fine White, тоник, лимон, лёд  180ml</span>
+            </a>
+            <div class="wl-price">850 ₽</div>
+        </div>
+
+        <div class="wl-grid">
+            <a href="https://bot.totgoose.ru/gin-and-tonic-250ml.html"  class="wl-info">
+                <span class="wl-name">Gin and Tonic/Джин Тоник  250ml</span>
+                <span class="wl-details">Gin Edinburg, тоник, огурец, лёд  250ml</span>
+            </a>
+            <div class="wl-price">950 ₽</div>
+        </div>
+
+    </div>
+<hr class="hr-shelf">
+    <div class="wl-section-footer">
+        <a href="https://yandex.ru/maps/org/tot_yeshchyo_gus/240625638253/" target="_blank" style="color:inherit;text-decoration:none;">Валовая 26</a>
+        </br>
+        <a href="tel:+79999262688" target="_blank" style="color:inherit;text-decoration:none;">+ 7 (9999) 26-26-88</a>
+        </br>
+        <a href="index.html" target="_blank" style="color:inherit;text-decoration:none;">Тот-Ещё-Гусь.рф</a>
+    </div>
+<script>
+    function confirmAge() {
+        document.getElementById('ageModal').classList.add('hidden');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('ageVerified', 'true');
+    }
+    
+    function denyAge() {
+        window.location.href = 'https://totgoose.ru';
+    }
+    
+    if (sessionStorage.getItem('ageVerified') === 'true') {
+        document.getElementById('ageModal').classList.add('hidden');
+        document.body.style.overflow = '';
+    } else {
+        document.body.style.overflow = 'hidden';
+    }
+</script>
+</body>
+</html>
